@@ -72,16 +72,17 @@ nav {
 }
 .nav-text {
   font-family: 'Cinzel', serif;
-  font-size: 10.5px;
-  letter-spacing: 0.15em;
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
   color: var(--gold);
   line-height: 1.4;
+  max-width: 420px;
 }
 .nav-text small {
   display: block;
   color: var(--ash);
-  font-size: 8.5px;
-  letter-spacing: 0.22em;
+  font-size: 8px;
+  letter-spacing: 0.2em;
 }
 .nav-links {
   display: flex;
