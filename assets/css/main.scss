@@ -578,6 +578,29 @@ h1.hero-title em {
   border-top: 1px solid rgba(201,168,76,0.1);
   padding-top: 12px;
   line-height: 1.6;
+  margin-bottom: 16px;
+}
+.book-acquire {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 8.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: transparent;
+  border: 1px solid rgba(201,168,76,0.35);
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: all 0.25s;
+  min-height: 40px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+}
+.book-acquire:hover {
+  background: rgba(201,168,76,0.08);
+  border-color: var(--gold);
+  letter-spacing: 0.26em;
 }
 
 /* ── MONOGRAPH CARDS ── */
