@@ -21,8 +21,7 @@ og_image: /assets/images/og-default.svg
 
 # Build settings
 theme: null
-plugins:
-  - jekyll-sitemap
+plugins: []
 
 # Sass processing
 sass:
