@@ -14,10 +14,14 @@ author:
 
 gumroad_url: https://sacredcivilization.gumroad.com
 
+# SEO & social
+lang: en
+timezone: Asia/Karachi
+og_image: /assets/images/og-default.svg
+
 # Build settings
 theme: null
 plugins:
-  - jekyll-seo-tag
   - jekyll-sitemap
 
 # Sass processing

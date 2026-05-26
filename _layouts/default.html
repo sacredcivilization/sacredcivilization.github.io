@@ -1,35 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: https://ogp.me/ns#">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if page.title %}{{ page.title }} — {% endif %}Sacred Civilization Research Archive · Al-Vid Scriptorium</title>
-  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-  <meta name="keywords" content="Sacred Civilization Research Archive, SCRA, Al-Vid Scriptorium, Saad Khizar Bosal, Mandi Bahauddin, Henry Corbin, Ibn Arabi, Mulla Sadra, Suhrawardi, Warasat al-Anbiya, Khorasan Codes, civilizational transmission, Islamic metaphysics">
-  <meta property="og:title" content="{% if page.title %}{{ page.title }} — {% endif %}Sacred Civilization Research Archive">
-  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ page.url | absolute_url }}">
+
+  <!-- ══ TITLE ══ -->
+  <title>{% if page.title %}{{ page.title }} — {% endif %}Al-Vid Scriptorium · Sacred Civilization Research Archive</title>
+
+  <!-- ══ CORE SEO ══ -->
+  <meta name="description" content="{% if page.description %}{{ page.description | strip_newlines | strip }}{% else %}{{ site.description | strip_newlines | strip }}{% endif %}">
+  <meta name="author" content="{{ site.author.name }}">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="keywords" content="Sacred Civilization Research Archive, SCRA, Al-Vid Scriptorium, Saad Khizar Bosal, Mandi Bahauddin, Henry Corbin, Ibn Arabi, Mulla Sadra, Suhrawardi, Warasat al-Anbiya, Khorasan Codes, civilizational transmission, Islamic metaphysics, digital manuscript repository, version-controlled archive, sacred history">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
 
+  <!-- ══ OPEN GRAPH — SOCIAL SHARING CARDS ══ -->
+  <meta property="og:site_name" content="Al-Vid Scriptorium · Sacred Civilization Research Archive">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="{% if page.layout == 'page' %}article{% else %}website{% endif %}">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }} — Al-Vid Scriptorium{% else %}Al-Vid Scriptorium · Sacred Civilization Research Archive{% endif %}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description | strip_newlines | strip }}{% else %}{{ site.description | strip_newlines | strip }}{% endif %}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ site.url }}/assets/images/og-default.svg">
+  <meta property="og:image:secure_url" content="{{ site.url }}/assets/images/og-default.svg">
+  <meta property="og:image:type" content="image/svg+xml">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Al-Vid Scriptorium — Version-Controlled Digital Manuscript Repository — Sacred Civilization Research Archive">
+
+  <!-- ══ TWITTER / X CARD ══ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }} — Al-Vid Scriptorium{% else %}Al-Vid Scriptorium · Sacred Civilization Research Archive{% endif %}">
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description | strip_newlines | strip }}{% else %}{{ site.description | strip_newlines | strip }}{% endif %}">
+  <meta name="twitter:image" content="{{ site.url }}/assets/images/og-default.svg">
+  <meta name="twitter:image:alt" content="Al-Vid Scriptorium — Sacred Civilization Research Archive">
+
+  <!-- ══ SCHEMA.ORG — SITE-WIDE @GRAPH ══ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Sacred Civilization Research Archive",
-    "alternateName": ["Al-Vid Scriptorium", "SCRA"],
-    "url": "{{ site.url }}",
-    "description": "{{ site.description | strip_newlines }}",
-    "founder": {
-      "@type": "Person",
-      "name": "Saad Khizar Bosal",
-      "jobTitle": "Framework Architect",
-      "address": { "@type": "PostalAddress", "addressLocality": "Mandi Bahauddin", "addressRegion": "Punjab", "addressCountry": "PK" }
-    },
-    "sameAs": ["https://sacredcivilization.gumroad.com"]
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "{{ site.url }}/#website",
+        "url": "{{ site.url }}",
+        "name": "Al-Vid Scriptorium · Sacred Civilization Research Archive",
+        "alternateName": "SCRA",
+        "description": "{{ site.description | strip_newlines | strip }}",
+        "inLanguage": "en-US",
+        "publisher": { "@id": "{{ site.url }}/#archive" }
+      },
+      {
+        "@type": "ArchiveOrganization",
+        "@id": "{{ site.url }}/#archive",
+        "name": "Sacred Civilization Research Archive",
+        "alternateName": ["Al-Vid Scriptorium", "SCRA", "Al-Vid Scriptorium Repository"],
+        "url": "{{ site.url }}",
+        "description": "{{ site.description | strip_newlines | strip }}",
+        "foundingDate": "2026",
+        "knowsAbout": [
+          "Islamic Metaphysics",
+          "Civilizational Transmission",
+          "Prophetic Inheritance",
+          "Khorasan Studies",
+          "Sufi Philosophy",
+          "Sacred Geography",
+          "Warasat al-Anbiya",
+          "Ibn Arabi",
+          "Mulla Sadra",
+          "Suhrawardi",
+          "Henry Corbin"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Sacred Exchange Archive — Research Monographs & Books",
+          "url": "{{ site.gumroad_url }}"
+        },
+        "founder": {
+          "@type": "Person",
+          "@id": "{{ site.url }}/#founder",
+          "name": "Saad Khizar Bosal",
+          "jobTitle": "Framework Architect",
+          "worksFor": { "@id": "{{ site.url }}/#archive" },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Mandi Bahauddin",
+            "addressRegion": "Punjab",
+            "addressCountry": "PK"
+          }
+        },
+        "sameAs": [
+          "https://sacredcivilization.gumroad.com",
+          "https://github.com/sacredcivilization/sacredcivilization.github.io"
+        ]
+      }
+    ]
   }
   </script>
 
+  {% if page.layout == 'page' and page.title %}
+  <!-- ══ SCHEMA.ORG — PER-PAGE SCHOLARLY ARTICLE / BOOK ══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["ScholarlyArticle", "Book"],
+    "@id": "{{ page.url | absolute_url }}#work",
+    "name": "{{ page.title }}",
+    "headline": "{{ page.title }}{% if page.subtitle %}: {{ page.subtitle }}{% endif %}",
+    "description": "{% if page.description %}{{ page.description | strip_newlines | strip }}{% endif %}",
+    "url": "{{ page.url | absolute_url }}",
+    "inLanguage": "en",
+    "author": { "@id": "{{ site.url }}/#founder" },
+    "publisher": { "@id": "{{ site.url }}/#archive" },
+    "isPartOf": { "@id": "{{ site.url }}/#website" },
+    "genre": ["Islamic Metaphysics", "Civilizational Studies", "Sacred History", "Sufi Philosophy"],
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "{{ site.gumroad_url }}"
+    }
+  }
+  </script>
+  {% endif %}
+
+  <!-- ══ FONTS ══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">

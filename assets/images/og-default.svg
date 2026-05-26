@@ -1,0 +1,58 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#1A1612"/>
+  <!-- Noise texture approximation via subtle gradient -->
+  <rect width="1200" height="630" fill="url(#bg-grad)" opacity="0.6"/>
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#5C1A1A" stop-opacity="0.18"/>
+      <stop offset="50%"  stop-color="#1A1612" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#1A2E1A" stop-opacity="0.14"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Gold border lines top/bottom -->
+  <rect x="0"   y="0"   width="1200" height="2"   fill="#C9A84C" opacity="0.55"/>
+  <rect x="0"   y="628" width="1200" height="2"   fill="#C9A84C" opacity="0.55"/>
+  <!-- Left accent bar -->
+  <rect x="0"   y="0"   width="3"    height="630" fill="#C9A84C" opacity="0.3"/>
+  <!-- Right accent bar -->
+  <rect x="1197" y="0"  width="3"    height="630" fill="#C9A84C" opacity="0.3"/>
+
+  <!-- Inner frame -->
+  <rect x="48" y="48" width="1104" height="534" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- Corner ornaments — top left -->
+  <line x1="48"  y1="48"  x2="90"  y2="48"  stroke="#C9A84C" stroke-width="1.5" opacity="0.5"/>
+  <line x1="48"  y1="48"  x2="48"  y2="90"  stroke="#C9A84C" stroke-width="1.5" opacity="0.5"/>
+  <!-- Corner ornaments — bottom right -->
+  <line x1="1152" y1="582" x2="1110" y2="582" stroke="#C9A84C" stroke-width="1.5" opacity="0.5"/>
+  <line x1="1152" y1="582" x2="1152" y2="540" stroke="#C9A84C" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Top label -->
+  <text x="600" y="155" font-family="Georgia, 'Times New Roman', serif" font-size="15" fill="#C9A84C" text-anchor="middle" letter-spacing="10" opacity="0.85">AL-VID SCRIPTORIUM REPOSITORY</text>
+
+  <!-- Ornament line -->
+  <line x1="440" y1="172" x2="556" y2="172" stroke="#8B6B2A" stroke-width="0.5" opacity="0.5"/>
+  <rect x="597" y="168" width="6" height="6" fill="#C9A84C" opacity="0.6" transform="rotate(45 600 171)"/>
+  <line x1="644" y1="172" x2="760" y2="172" stroke="#8B6B2A" stroke-width="0.5" opacity="0.5"/>
+
+  <!-- Main title line 1 -->
+  <text x="600" y="268" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-weight="bold" fill="#F5F0E8" text-anchor="middle" letter-spacing="2">Sacred Civilization</text>
+  <!-- Main title line 2 -->
+  <text x="600" y="345" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-weight="bold" fill="#F5F0E8" text-anchor="middle" letter-spacing="2">Research Archive</text>
+
+  <!-- Divider rule -->
+  <line x1="350" y1="375" x2="570" y2="375" stroke="#8B6B2A" stroke-width="0.7" opacity="0.45"/>
+  <rect x="596" y="371" width="8" height="8" fill="#C9A84C" opacity="0.55" transform="rotate(45 600 375)"/>
+  <line x1="630" y1="375" x2="850" y2="375" stroke="#8B6B2A" stroke-width="0.7" opacity="0.45"/>
+
+  <!-- Subtitle -->
+  <text x="600" y="418" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#C9A84C" text-anchor="middle" font-style="italic" opacity="0.9">Version-Controlled Digital Manuscript Repository</text>
+
+  <!-- Meta line -->
+  <text x="600" y="468" font-family="Georgia, 'Times New Roman', serif" font-size="14" fill="#8A8070" text-anchor="middle" letter-spacing="5">MANDI BAHAUDDIN · PUNJAB · 4,000 YEARS DOCUMENTED</text>
+
+  <!-- Bottom label -->
+  <text x="600" y="555" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#8B6B2A" text-anchor="middle" letter-spacing="6" opacity="0.7">sacredcivilization.github.io</text>
+</svg>
