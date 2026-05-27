@@ -2398,10 +2398,167 @@ a.gl-ft-vault { color: var(--gold) !important; }
 }
 .shifts-emergence-body strong { color: var(--parchment); font-weight: 600; }
 
+/* ── TOLEDO RUPTURE CARD VARIANT ── */
+.shifts-rc--toledo::before {
+  background: linear-gradient(to right, rgba(100,70,20,0.65), rgba(212,175,55,0.28), rgba(60,80,120,0.20), transparent);
+}
+
+/* ── EXTRACTION LAYER ── */
+.shifts-extraction-layer {
+  border: 1px solid rgba(212,175,55,0.10);
+  border-left: 3px solid rgba(212,175,55,0.25);
+  background: rgba(10,10,10,0.50);
+  margin: 4px 0;
+}
+.shifts-layer--alid {
+  border-left-color: rgba(139,0,0,0.40);
+}
+.shifts-layer-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  border-bottom: 1px solid rgba(212,175,55,0.08);
+}
+.shifts-layer-num {
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  padding: 18px 20px;
+  color: var(--gold-dim);
+  background: rgba(212,175,55,0.04);
+  border-right: 1px solid rgba(212,175,55,0.08);
+  white-space: nowrap;
+  flex-shrink: 0;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shifts-layer--alid .shifts-layer-num {
+  color: rgba(200,80,80,0.65);
+  background: rgba(139,0,0,0.05);
+  border-right-color: rgba(139,0,0,0.12);
+}
+.shifts-layer-title {
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--parchment);
+  letter-spacing: 0.04em;
+  margin-bottom: 3px;
+  padding: 18px 28px 0;
+}
+.shifts-layer-sub {
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  color: var(--gold-dim);
+  text-transform: uppercase;
+  padding: 0 28px 16px;
+  display: block;
+}
+.shifts-layer-body {
+  padding: 22px 28px 24px;
+}
+.shifts-layer-body p {
+  font-family: 'EB Garamond', serif;
+  font-size: 16px;
+  color: var(--ash-light);
+  line-height: 1.85;
+  margin-bottom: 16px;
+}
+.shifts-layer-body p strong { color: var(--parchment); font-weight: 600; }
+.shifts-layer-body p em { font-style: italic; color: var(--parchment); }
+
+/* ── TRIPLE STRIP GRID ── */
+.shifts-triple-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2px;
+  margin: 20px 0 8px;
+  border: 1px solid rgba(212,175,55,0.08);
+}
+.shifts-strip-item {
+  padding: 18px 20px;
+  background: rgba(5,3,1,0.65);
+}
+.shifts-strip-item:nth-child(1) { border-top: 2px solid rgba(212,175,55,0.30); }
+.shifts-strip-item:nth-child(2) { border-top: 2px solid rgba(139,0,0,0.40); }
+.shifts-strip-item:nth-child(3) { border-top: 2px solid rgba(60,80,120,0.45); }
+.shifts-strip-label {
+  font-size: 8px;
+  letter-spacing: 0.24em;
+  color: var(--gold-dim);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+.shifts-strip-content {
+  font-family: 'EB Garamond', serif;
+  font-size: 13.5px;
+  color: var(--ash-light);
+  line-height: 1.7;
+}
+
+/* ── CHAIN FLOW ── */
+.shifts-chain-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 18px 0;
+  padding: 18px 20px;
+  background: rgba(5,3,1,0.55);
+  border: 1px solid rgba(212,175,55,0.08);
+}
+.shifts-chain-node {
+  font-size: 9px;
+  letter-spacing: 0.10em;
+  color: var(--ash-light);
+  text-align: center;
+  padding: 8px 12px;
+  border: 1px solid rgba(212,175,55,0.14);
+  background: rgba(212,175,55,0.04);
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+.shifts-chain-node small {
+  display: block;
+  font-size: 8px;
+  color: var(--ash);
+  margin-top: 3px;
+  text-transform: none;
+  letter-spacing: 0.06em;
+  font-family: 'JetBrains Mono', monospace;
+}
+.shifts-chain-stripped {
+  border-color: rgba(139,0,0,0.25);
+  background: rgba(139,0,0,0.04);
+  color: rgba(200,160,160,0.75);
+}
+.shifts-chain-europe {
+  border-color: rgba(60,80,120,0.30);
+  background: rgba(30,40,70,0.08);
+  color: rgba(160,180,220,0.75);
+}
+.shifts-chain-arrow {
+  color: var(--gold-dim);
+  opacity: 0.45;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
 /* ── RESPONSIVE SHIFTS ≤ 900px ── */
 @media (max-width: 900px) {
   .shifts-rupture-card { padding: 28px 24px; }
   .shifts-analysis-box { padding: 22px 22px; }
+  .shifts-triple-strip { grid-template-columns: 1fr; }
+  .shifts-layer-header { flex-direction: column; }
+  .shifts-layer-num { writing-mode: horizontal-tb; transform: none; padding: 10px 20px; border-right: none; border-bottom: 1px solid rgba(212,175,55,0.08); width: 100%; }
+  .shifts-layer--alid .shifts-layer-num { border-bottom-color: rgba(139,0,0,0.12); }
+  .shifts-layer-body { padding: 18px 20px; }
+  .shifts-chain-flow { padding: 14px 16px; gap: 4px; }
   .shifts-typology-grid { grid-template-columns: 1fr; }
   .shifts-type--textual { border-right: none; border-bottom: 1px solid rgba(212,175,55,0.08); }
   .shifts-type-col { padding: 26px 22px; }
