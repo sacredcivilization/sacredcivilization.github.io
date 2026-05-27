@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Node 01 — Grand Library Hub -->
+  <sitemap>
+    <loc>https://sacredcivilization.github.io/sitemap.xml</loc>
+    <lastmod>2026-05-27</lastmod>
+  </sitemap>
+
+  <!-- Node 02 — Digital Vault -->
+  <sitemap>
+    <loc>https://sacredcivilization.github.io/sacred-archive/sitemap.xml</loc>
+    <lastmod>2026-05-27</lastmod>
+  </sitemap>
+
+  <!-- Node 03 — Sacred Sorrow -->
+  <sitemap>
+    <loc>https://sacredcivilization.github.io/sacred-sorrow/sitemap.xml</loc>
+    <lastmod>2026-05-27</lastmod>
+  </sitemap>
+
+</sitemapindex>

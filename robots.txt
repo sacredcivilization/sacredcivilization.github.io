@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
 
+# SCRA Sitemap Index — all three nodes
+Sitemap: https://sacredcivilization.github.io/sitemap_index.xml
+
+# Individual node sitemaps
 Sitemap: https://sacredcivilization.github.io/sitemap.xml
+Sitemap: https://sacredcivilization.github.io/sacred-archive/sitemap.xml
+Sitemap: https://sacredcivilization.github.io/sacred-sorrow/sitemap.xml
