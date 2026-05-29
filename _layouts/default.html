@@ -154,20 +154,26 @@
   </div>
 
   <script>
-  (function(){
-    var s=document.createElement('script');
-    s.src='https://www.youtube.com/iframe_api';
-    document.head.appendChild(s);
-  })();
   var _samaPlayer,_samaMuted=true;
-  window.onYouTubeIframeAPIReady=function(){
+  function _initSamaPlayer(){
     _samaPlayer=new YT.Player('yt-sama-player',{
       height:'1',width:'1',
-      videoId:'x1acdSFC7vc',
-      playerVars:{autoplay:1,mute:1,loop:1,playlist:'x1acdSFC7vc',controls:0,disablekb:1,fs:0,modestbranding:1,iv_load_policy:3,rel:0},
+      videoId:'ca_tnQMeE2I',
+      playerVars:{autoplay:1,mute:1,loop:1,playlist:'ca_tnQMeE2I',controls:0,disablekb:1,fs:0,modestbranding:1,iv_load_policy:3,rel:0},
       events:{onReady:function(e){e.target.playVideo();}}
     });
-  };
+  }
+  /* Standard callback for when API loads fresh */
+  window.onYouTubeIframeAPIReady=_initSamaPlayer;
+  /* Fallback: API already cached and ready (browser hit from prior session) */
+  if(window.YT&&window.YT.Player){_initSamaPlayer();}
+  else{
+    (function(){
+      var s=document.createElement('script');
+      s.src='https://www.youtube.com/iframe_api';
+      document.head.appendChild(s);
+    })();
+  }
   function toggleSama(){
     if(!_samaPlayer||typeof _samaPlayer.unMute!=='function')return;
     var btn=document.getElementById('sama-btn');
