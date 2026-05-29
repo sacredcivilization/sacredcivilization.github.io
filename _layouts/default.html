@@ -174,8 +174,28 @@
       document.head.appendChild(s);
     })();
   }
+  /* Auto-unmute on first user gesture (browsers block unmuted autoplay) */
+  var _samaAutoUnmuted=false;
+  function _samaUnmuteOnGesture(){
+    if(_samaAutoUnmuted)return;
+    if(!_samaPlayer||typeof _samaPlayer.unMute!=='function')return;
+    _samaAutoUnmuted=true;
+    _samaPlayer.unMute();_samaPlayer.setVolume(32);
+    _samaMuted=false;
+    var btn=document.getElementById('sama-btn');
+    var lbl=document.getElementById('sama-label');
+    if(btn)btn.classList.add('live');
+    if(lbl)lbl.textContent='SAMA ♪';
+    ['click','scroll','touchstart','keydown'].forEach(function(ev){
+      document.removeEventListener(ev,_samaUnmuteOnGesture,{passive:true});
+    });
+  }
+  ['click','scroll','touchstart','keydown'].forEach(function(ev){
+    document.addEventListener(ev,_samaUnmuteOnGesture,{passive:true});
+  });
   function toggleSama(){
     if(!_samaPlayer||typeof _samaPlayer.unMute!=='function')return;
+    _samaAutoUnmuted=true;
     var btn=document.getElementById('sama-btn');
     var lbl=document.getElementById('sama-label');
     if(_samaMuted){
