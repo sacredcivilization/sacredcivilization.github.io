@@ -4,72 +4,90 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
+  <!-- ══ HOMEPAGE ══ -->
   <url>
     <loc>https://dargah-ghazikot.alvidscriptorium.com/</loc>
-    <lastmod>2026-05-29</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
+  <!-- ══ DARGAH PAGES ══ -->
   <url>
-    <loc>https://dargah-ghazikot.alvidscriptorium.com/shifts/</loc>
-    <lastmod>2026-05-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://dargah-ghazikot.alvidscriptorium.com/linguistics/</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/endowment/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://dargah-ghazikot.alvidscriptorium.com/registry/</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://dargah-ghazikot.alvidscriptorium.com/endowment/</loc>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/shifts/</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/linguistics/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ══ SIX RESEARCH STUDIES ══ -->
   <url>
     <loc>https://dargah-ghazikot.alvidscriptorium.com/open-corridors/</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://dargah-ghazikot.alvidscriptorium.com/sacred-geography/</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/toledo-theft/</loc>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/islam-survived/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://dargah-ghazikot.alvidscriptorium.com/khorasan-codes/</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/sacred-geography/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://dargah-ghazikot.alvidscriptorium.com/custodians-of-light/</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
 
+  <!-- ══ DIGITAL LIBRARY / ARCHIVE ══ -->
   <url>
     <loc>https://dargah-ghazikot.alvidscriptorium.com/master-collection/</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -89,17 +107,18 @@
   </url>
 
   <url>
-    <loc>https://dargah-ghazikot.alvidscriptorium.com/about/</loc>
-    <lastmod>2026-05-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
     <loc>https://dargah-ghazikot.alvidscriptorium.com/working-papers/</loc>
     <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+  </url>
+
+  <!-- ══ ABOUT ══ -->
+  <url>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/about/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
 </urlset>

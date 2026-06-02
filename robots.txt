@@ -8,3 +8,4 @@ Sitemap: https://dargah-ghazikot.alvidscriptorium.com/sitemap_index.xml
 Sitemap: https://dargah-ghazikot.alvidscriptorium.com/sitemap.xml
 Sitemap: https://alvidscriptorium.com/sitemap.xml
 Sitemap: https://sorrow.alvidscriptorium.com/sitemap.xml
+Sitemap: https://sacred-archive.alvidscriptorium.com/sitemap.xml
