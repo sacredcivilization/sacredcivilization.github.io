@@ -2,9 +2,9 @@ User-agent: *
 Allow: /
 
 # SCRA Network Sitemap Index
-Sitemap: https://library.alvidscriptorium.com/sitemap_index.xml
+Sitemap: https://dargah-ghazikot.alvidscriptorium.com/sitemap_index.xml
 
 # Individual node sitemaps
-Sitemap: https://library.alvidscriptorium.com/sitemap.xml
+Sitemap: https://dargah-ghazikot.alvidscriptorium.com/sitemap.xml
 Sitemap: https://alvidscriptorium.com/sitemap.xml
 Sitemap: https://sorrow.alvidscriptorium.com/sitemap.xml

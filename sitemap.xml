@@ -5,98 +5,98 @@
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
   <url>
-    <loc>https://library.alvidscriptorium.com/</loc>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://library.alvidscriptorium.com/shifts/</loc>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/shifts/</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://library.alvidscriptorium.com/linguistics/</loc>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/linguistics/</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://library.alvidscriptorium.com/registry/</loc>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/registry/</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://library.alvidscriptorium.com/endowment/</loc>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/endowment/</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://library.alvidscriptorium.com/open-corridors/</loc>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/open-corridors/</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://library.alvidscriptorium.com/sacred-geography/</loc>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/sacred-geography/</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://library.alvidscriptorium.com/khorasan-codes/</loc>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/khorasan-codes/</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://library.alvidscriptorium.com/custodians-of-light/</loc>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/custodians-of-light/</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://library.alvidscriptorium.com/master-collection/</loc>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/master-collection/</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://library.alvidscriptorium.com/scholars/</loc>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/scholars/</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://library.alvidscriptorium.com/transmission-map/</loc>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/transmission-map/</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://library.alvidscriptorium.com/about/</loc>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/about/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://library.alvidscriptorium.com/working-papers/</loc>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/working-papers/</loc>
     <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
