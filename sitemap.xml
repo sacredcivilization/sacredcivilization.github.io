@@ -121,4 +121,44 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- ══ EXCHANGE ══ -->
+  <url>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/exchange/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ══ LINGUISTICS SUB-PAGES ══ -->
+  <url>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/linguistics/arabic/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/linguistics/syriac/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/linguistics/persian/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/linguistics/punjabi/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/linguistics/ishraq/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
 </urlset>
