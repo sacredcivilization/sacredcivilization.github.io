@@ -1,11 +1,66 @@
+# Dargah Ghazi Kot — dargah-ghazikot.alvidscriptorium.com
+# Sacred Civilization Research Archive (SCRA) · NODE-02
+
+# ── All crawlers ──────────────────────────────────────
 User-agent: *
 Allow: /
 
-# SCRA Network Sitemap Index
-Sitemap: https://dargah-ghazikot.alvidscriptorium.com/sitemap_index.xml
+# ── Google (Search + AI) ──────────────────────────────
+User-agent: Googlebot
+Allow: /
 
-# Individual node sitemaps
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+# ── Bing / Microsoft Copilot ──────────────────────────
+User-agent: Bingbot
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+# ── OpenAI / ChatGPT ──────────────────────────────────
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# ── Anthropic / Claude ────────────────────────────────
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# ── Perplexity ────────────────────────────────────────
+User-agent: PerplexityBot
+Allow: /
+
+# ── Apple ─────────────────────────────────────────────
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# ── Meta ──────────────────────────────────────────────
+User-agent: FacebookBot
+Allow: /
+
+# ── Common academic / archive crawlers ───────────────
+User-agent: ia_archiver
+Allow: /
+
+User-agent: archive.org_bot
+Allow: /
+
+# ── Sitemap ───────────────────────────────────────────
 Sitemap: https://dargah-ghazikot.alvidscriptorium.com/sitemap.xml
-Sitemap: https://alvidscriptorium.com/sitemap.xml
-Sitemap: https://sorrow.alvidscriptorium.com/sitemap.xml
 

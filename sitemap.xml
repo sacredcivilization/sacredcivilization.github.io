@@ -7,129 +7,88 @@
   <!-- ══ HOMEPAGE ══ -->
   <url>
     <loc>https://dargah-ghazikot.alvidscriptorium.com/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- ══ DARGAH PAGES ══ -->
+  <!-- ══ THE DARBAR & WAQF ══ -->
   <url>
     <loc>https://dargah-ghazikot.alvidscriptorium.com/endowment/</loc>
-    <lastmod>2026-05-29</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
+  <!-- ══ AKADEMIYA — REGISTRY ══ -->
   <url>
     <loc>https://dargah-ghazikot.alvidscriptorium.com/registry/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <url>
-    <loc>https://dargah-ghazikot.alvidscriptorium.com/shifts/</loc>
-    <lastmod>2026-05-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://dargah-ghazikot.alvidscriptorium.com/linguistics/</loc>
-    <lastmod>2026-05-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ══ SIX RESEARCH STUDIES ══ -->
-  <url>
-    <loc>https://dargah-ghazikot.alvidscriptorium.com/open-corridors/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <url>
-    <loc>https://dargah-ghazikot.alvidscriptorium.com/toledo-theft/</loc>
-    <lastmod>2026-06-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://dargah-ghazikot.alvidscriptorium.com/islam-survived/</loc>
-    <lastmod>2026-06-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://dargah-ghazikot.alvidscriptorium.com/khorasan-codes/</loc>
-    <lastmod>2026-06-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
+  <!-- ══ KULLIYYAT AL-INDUS — STUDY I ══ -->
   <url>
     <loc>https://dargah-ghazikot.alvidscriptorium.com/sacred-geography/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
+  <!-- ══ KULLIYYAT AL-INDUS — STUDY II ══ -->
   <url>
-    <loc>https://dargah-ghazikot.alvidscriptorium.com/custodians-of-light/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/khorasan-codes/</loc>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- ══ DIGITAL LIBRARY / ARCHIVE ══ -->
+  <!-- ══ KULLIYYAT AL-INDUS — STUDY III ══ -->
   <url>
-    <loc>https://dargah-ghazikot.alvidscriptorium.com/master-collection/</loc>
-    <lastmod>2026-05-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://dargah-ghazikot.alvidscriptorium.com/scholars/</loc>
-    <lastmod>2026-05-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://dargah-ghazikot.alvidscriptorium.com/transmission-map/</loc>
-    <lastmod>2026-05-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://dargah-ghazikot.alvidscriptorium.com/working-papers/</loc>
-    <lastmod>2026-05-31</lastmod>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/linguistics/</loc>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- ══ ABOUT ══ -->
+  <!-- ══ KULLIYYAT AL-SILSILA — STUDY IV ══ -->
   <url>
-    <loc>https://dargah-ghazikot.alvidscriptorium.com/about/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/custodians-of-light/</loc>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
 
-  <!-- ══ EXCHANGE ══ -->
+  <!-- ══ KULLIYYAT AL-SILSILA — STUDY V ══ -->
   <url>
-    <loc>https://dargah-ghazikot.alvidscriptorium.com/exchange/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/islam-survived/</loc>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
 
-  <!-- ══ LINGUISTICS SUB-PAGES ══ -->
+  <!-- ══ KULLIYYAT AL-SILSILA — STUDY VI (CONTEXT) ══ -->
+  <url>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/open-corridors/</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/toledo-theft/</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/shifts/</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- ══ LANGUAGE ARCHIVE SUB-PAGES ══ -->
   <url>
     <loc>https://dargah-ghazikot.alvidscriptorium.com/linguistics/arabic/</loc>
     <lastmod>2026-06-03</lastmod>
@@ -159,6 +118,22 @@
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+  </url>
+
+  <!-- ══ ABOUT ══ -->
+  <url>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/about/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ══ EXCHANGE ══ -->
+  <url>
+    <loc>https://dargah-ghazikot.alvidscriptorium.com/exchange/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
 </urlset>
