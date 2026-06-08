@@ -43,7 +43,7 @@
       {
         "@type": "WebSite",
         "@id": "{{ site.url }}/#website",
-        "url": "{{ site.url }}",
+        "url": "{{ site.url }}/",
         "name": "Al-Vid Scriptorium · Sacred Civilization Research Archive",
         "alternateName": "SCRA",
         "description": "{{ site.description | strip_newlines | strip }}",
@@ -99,6 +99,30 @@
           "https://github.com/sacredcivilization/sacredcivilization.github.io",
           "https://alvidscriptorium.com/"
         ]
+      },
+      {
+        "@type": ["LandmarksOrHistoricalBuildings", "Place"],
+        "@id": "{{ site.url }}/#dargah",
+        "name": "Dargah Ghazi Kot — Pir Syed Shams ul Abbas Bukhari r.a.",
+        "alternateName": "Dargah Ghazi Kot",
+        "description": "Dargah of Pir Syed Shams ul Abbas Bukhari r.a. at Ghazi Kot, near Takht Hazara, on the Chenab, District Mandi Bahauddin, Punjab. A living node of the Alid-Sufi transmission chain of the Indus Basin.",
+        "url": "{{ site.url }}/",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "31.5543",
+          "longitude": "73.4873"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ghazi Kot, near Takht Hazara",
+          "addressRegion": "Mandi Bahauddin, Punjab",
+          "addressCountry": "PK"
+        },
+        "containedInPlace": {
+          "@type": "AdministrativeArea",
+          "name": "Mandi Bahauddin District",
+          "addressCountry": "PK"
+        }
       }
     ]
   }
@@ -129,11 +153,11 @@
   {% endif %}
 
   {% if page.layout == 'page' and page.title %}
-  <!-- ══ SCHEMA.ORG — PER-PAGE SCHOLARLY ARTICLE / BOOK ══ -->
+  <!-- ══ SCHEMA.ORG — PER-PAGE SCHOLARLY ARTICLE ══ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": ["ScholarlyArticle", "Book"],
+    "@type": "ScholarlyArticle",
     "@id": "{{ page.url | absolute_url }}#work",
     "name": "{{ page.title }}",
     "headline": "{{ page.title }}{% if page.subtitle %}: {{ page.subtitle }}{% endif %}",
@@ -144,7 +168,9 @@
     "publisher": { "@id": "{{ site.url }}/#archive" },
     "isPartOf": { "@id": "{{ site.url }}/#website" },
     "genre": ["Islamic Metaphysics", "Civilizational Studies", "Sacred History", "Sufi Philosophy"],
-    "isAccessibleForFree": true
+    "isAccessibleForFree": true,
+    "datePublished": "{{ page.last_modified_at | default: '2026-06-09' }}",
+    "dateModified": "{{ page.last_modified_at | default: '2026-06-09' }}"
   }
   </script>
   {% endif %}
