@@ -1,5 +1,5 @@
 # Dargah Ghazi Kot — dargah-ghazikot.alvidscriptorium.com
-# Sacred Civilization Research Archive (SCRA) · NODE-02
+# Alvid Scriptorium — The Intizār Archive
 
 # ── All crawlers ──────────────────────────────────────
 User-agent: *

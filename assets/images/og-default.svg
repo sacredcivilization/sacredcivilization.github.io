@@ -38,9 +38,9 @@
   <line x1="644" y1="172" x2="760" y2="172" stroke="#8B6B2A" stroke-width="0.5" opacity="0.5"/>
 
   <!-- Main title line 1 -->
-  <text x="600" y="268" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-weight="bold" fill="#F5F0E8" text-anchor="middle" letter-spacing="2">Sacred Civilization</text>
+  <text x="600" y="268" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-weight="bold" fill="#F5F0E8" text-anchor="middle" letter-spacing="2">Dargah Ghazi Kot</text>
   <!-- Main title line 2 -->
-  <text x="600" y="345" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-weight="bold" fill="#F5F0E8" text-anchor="middle" letter-spacing="2">Research Archive</text>
+  <text x="600" y="345" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-weight="bold" fill="#F5F0E8" text-anchor="middle" letter-spacing="2">Intizār Archive</text>
 
   <!-- Divider rule -->
   <line x1="350" y1="375" x2="570" y2="375" stroke="#8B6B2A" stroke-width="0.7" opacity="0.45"/>
