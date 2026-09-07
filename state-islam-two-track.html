@@ -1,0 +1,112 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<title>Two Tracks, One State? — Alvid Scriptorium</title>
+<style>
+  :root{
+    --paper:#e3dfce; --paper-raised:#ece8d7; --paper-line:#c9c3ac;
+    --ink:#1b1d22; --ink-soft:#4a4d53; --verdigris:#2f5d50; --verdigris-soft:#3f6e5f;
+    --brass:#8a6a2a; --track1:#5b5f6b; --track2:#2f5d50;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#15171b; --paper-raised:#1c1f24; --paper-line:#33363d;
+      --ink:#e8e3d2; --ink-soft:#a9a89c; --verdigris:#5a9884; --verdigris-soft:#4c8b77; --brass:#c9a559;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#15171b; --paper-raised:#1c1f24; --paper-line:#33363d;
+    --ink:#e8e3d2; --ink-soft:#a9a89c; --verdigris:#5a9884; --verdigris-soft:#4c8b77; --brass:#c9a559;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:"Source Sans 3",ui-sans-serif,system-ui,sans-serif; font-size:17px; line-height:1.7;}
+  a{color:var(--verdigris);}
+  .wrap{max-width:760px; margin:0 auto; padding:0 28px;}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif; font-weight:500; text-wrap:balance; margin:0;}
+  .eyebrow{font-family:"IBM Plex Mono",monospace; font-size:12.5px; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-soft);}
+  header{border-bottom:1px solid var(--paper-line); padding:18px 0;}
+  header .wrap{max-width:1080px; display:flex; justify-content:space-between; align-items:center;}
+  .back{font-family:"Fraunces",serif; font-weight:600; font-size:16px; text-decoration:none; color:var(--ink);}
+  .home-link{font-family:"IBM Plex Mono",monospace; font-size:13px; color:var(--ink-soft); text-decoration:none;}
+  article{padding:56px 0 40px;}
+  .tierbadge{display:inline-flex; align-items:center; gap:8px; font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.05em; text-transform:uppercase; color:var(--verdigris); border:1px solid var(--verdigris); padding:5px 10px; border-radius:2px;}
+  h1.title{font-size:clamp(28px,4.4vw,42px); line-height:1.15; margin-top:20px;}
+  .byline{margin-top:18px; font-family:"IBM Plex Mono",monospace; font-size:13px; color:var(--ink-soft); display:flex; gap:18px; flex-wrap:wrap;}
+  .abstract{margin-top:32px; padding:22px 24px; background:var(--paper-raised); border-radius:3px; font-size:16px; color:var(--ink-soft); border-left:3px solid var(--verdigris);}
+  .abstract .lbl{font-family:"IBM Plex Mono",monospace; font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--verdigris); display:block; margin-bottom:8px;}
+  h2.sec{font-size:22px; margin-top:52px; margin-bottom:16px; padding-top:8px;}
+  p{margin:16px 0; color:var(--ink);}
+  .note-section{background:var(--paper-raised); padding:26px 26px; border-radius:3px; margin-top:20px;}
+  .note-section h2.sec{margin-top:0;}
+  ol.biblio{padding-left:22px; font-size:15px; color:var(--ink-soft);}
+  ol.biblio li{margin-bottom:10px;}
+  .editorial{margin-top:40px; padding:22px 24px; border:1px dashed var(--paper-line); border-radius:3px; font-size:14px; color:var(--ink-soft);}
+  .editorial .lbl{font-family:"IBM Plex Mono",monospace; font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-soft); display:block; margin-bottom:8px;}
+  footer{border-top:1px solid var(--paper-line); padding:30px 0 50px; margin-top:20px;}
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px; font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--ink-soft);}
+</style>
+
+<header>
+  <div class="wrap">
+    <a class="back" href="index.html">Alvid Scriptorium</a>
+    <a class="home-link" href="index.html">← all publications</a>
+  </div>
+</header>
+
+<article class="wrap">
+  <span class="tierbadge">Tier II — Framework</span>
+  <h1 class="title">Two Tracks, One State? Rereading the "Which Islam" Debate on Pakistan's Founding</h1>
+  <div class="byline">
+    <span>Saad Khizar Bosal</span>
+    <span>Alvid Scriptorium</span>
+    <span>verification pass complete</span>
+  </div>
+
+  <div class="abstract">
+    <span class="lbl">The argument, stated plainly</span>
+    For decades, historians of Pakistan have argued over a single question: what kind of Islam, if any, was meant to underwrite the new state in 1947? One camp — running through Ayesha Jalal, Farzana Shaikh, and the broader "elite competition" school associated with Francis Robinson's work on United Provinces politics — reads Pakistan's Islamic rhetoric as instrumental: a bargaining chip, a rallying cry, or the surface expression of an unresolved "identity crisis" the state has never settled. A second camp, running from Abul A'la Mawdudi through General Zia-ul-Haq's Islamization program, reads Pakistan's founding as an unfinished mandate for a state-enforced Sharia order. I argue both camps are describing something real, but that a third layer — a decentralized network of Sayyid lineages and Sufi shrines running along the Indus and its tributaries, predating and outliving the colonial and postcolonial state — helps explain why the "which Islam" question has never had a clean answer. I call this the <strong>Track 1 / Track 2</strong> reading, and I am explicit that this argument's strongest piece of "evidence" in an earlier draft — a court ruling said to have settled Jinnah's own sectarian identity — does not hold up and has been dropped.
+  </div>
+
+  <h2 class="sec">1. The historiographical debate, briefly</h2>
+  <p>Ayesha Jalal's <em>The Sole Spokesman</em> (1985) argues that Jinnah deployed the demand for Pakistan strategically — as leverage against the Congress and the British — rather than pursuing a fully sovereign, territorially truncated state as a fixed goal from the start; on her reading, the Pakistan that actually emerged in 1947 was closer to "a truncated Pakistan emerged from Jinnah's longstanding bluff" than to any coherent prior blueprint. Farzana Shaikh's <em>Making Sense of Pakistan</em> (2009) — reviewed under the apt title "Pakistan's Identity Crisis" — argues that the country has never resolved what "Islamic statehood" is supposed to mean in practice, and that this unresolved question is a recurring source of political instability. Francis Robinson's work on United Provinces Muslim politics (1860–1923) documents an earlier, real dynamic — Urdu-speaking Muslim elites organizing around government employment and representation against a Hindu-majority electorate — that is often folded into the broader "elite competition" account of Muslim separatism, though the book itself predates Partition by a generation and does not purport to explain 1947 directly. Hamza Alavi's 1972 <em>New Left Review</em> essay, "The State in Post-Colonial Societies: Pakistan and Bangladesh," makes a more specific argument than is sometimes credited to it: that the postcolonial state is not simply captured by one class, but is <em>relatively autonomous</em>, mediating between metropolitan capital, an indigenous bourgeoisie, and a landed class — with a military-bureaucratic apparatus inherited, "overdeveloped," from colonial rule. And Mawdudi's <em>Hukūmat-i Ilāhiyya</em> — the theory that sovereignty and law belong to God and must be administered through the state — supplied the ideological vocabulary Zia-ul-Haq drew on during his 1977–88 Islamization program.</p>
+  <p>These are not compatible theories of the same thing. Jalal and Shaikh treat "Islam" in Pakistan's founding as unstable or instrumentalized; Mawdudi and Zia treat it as a settled mandate the state had simply failed to enact. Both are right about part of the picture.</p>
+
+  <h2 class="sec">2. Track 1: the constitutional shield</h2>
+  <p>When Jinnah addressed the Constituent Assembly on August 11, 1947, he told it: "You may belong to any religion, caste or creed—that has nothing to do with the business of the State... We are starting with this fundamental principle that we are all citizens and equal citizens of one State." This is a real, well-documented speech, and it is the clearest statement of what I call Track 1 — a formal, civic conception of the state's relationship to religion, designed to prevent any single sect or community from capturing state power to the exclusion of others. Read against Jalal's argument that Jinnah treated Pakistan instrumentally, Track 1 is not a contradiction: a state built as a bargaining outcome can still be given, after the fact, a genuinely civic constitutional character. Read against Shaikh's "identity crisis" thesis, Track 1 is one half of the crisis — the half that was stated plainly in 1947 and then never fully institutionalized.</p>
+
+  <h2 class="sec">3. Track 2: the shrine-Sayyid network</h2>
+  <p>A second, older layer of religious authority was also operating underneath Track 1: the network of dargāhs (Multan, Uch, Sehwan, Pakpattan) and Sayyid lineages that has organized devotional and social life across the Indus basin for centuries, largely independent of whatever legal regime sits above it. This network is real, and its historical role in absorbing diverse communities — Jat, Baloch, Sindhi, Punjabi — into shared shrine culture is well documented in the regional historiography this project draws on elsewhere.</p>
+  <p>What I do <strong>not</strong> argue is that Muhammad Iqbal's 1930 Allahabad address — his proposal to amalgamate Punjab, the North-West Frontier Province, Sindh, and Baluchistan into a single Muslim-majority unit within a federated India — was secretly designed to protect this network. Iqbal's own stated reasoning in that speech rests on demographic majority and "unity of language, race, history, religion and identity of economic interests." No primary text has him invoking shrine geography or Sayyid lineage as his rationale, and earlier drafts of this argument that claimed otherwise (including a claim that his 1930 scheme already named Kashmir) have been corrected elsewhere in this project. What can be said, more modestly, is that the territory Iqbal proposed happens to substantially overlap with the historical footprint of this shrine network — an overlap worth noting as suggestive, not as proof of intent.</p>
+
+  <h2 class="sec">4. What I am retracting: the Sindh High Court claim</h2>
+  <p>An earlier version of this argument treated a 1968 Sindh High Court case as the decisive proof that Track 2 outranks Track 1 — the claim being that the court "legally and historically proved" Jinnah lived and died as a practicing Twelver Shia, which would mean the state's own founder embodied the shrine-and-Sayyid religious world rather than any single sectarian legal code.</p>
+  <p>This does not survive a check against the actual litigation. Jinnah's sectarian identity was contested across a chain of family-succession rulings: a 1948 affidavit favored Shia identity; a 1970 ruling leaned Sunni; a 1976 ruling found for Shia claims — but a Sindh High Court Division Bench in 1984 <em>reversed</em> that 1976 ruling and held that Jinnah was "definitely not a Shia." The 1984 ruling, not any 1968 finding, is the last word in the sequence, and it runs opposite to what earlier drafts claimed. The suit number itself is not settled even across this project's own sources. Jinnah's actual religious practice remains a genuinely contested question in Pakistani historiography — some biographers document Shia family ritual, others document Sunni public religious identification, and no single court ruling has settled it either way. I am dropping the court-case claim entirely rather than softening it, and I want to be explicit that no piece of evidence currently available lets Track 2 rest its case on Jinnah's own sectarian identity.</p>
+
+  <h2 class="sec">5. The 1977–88 rupture</h2>
+  <p>Where the framework holds up best is in explaining the Zia era. The 1980 Zakat and Ushr Ordinance imposed a compulsory 2.5% deduction understood in Sunni fiqh terms; because Shia jurisprudence does not treat state-administered zakat collection the same way, this functioned as a Sunni-coded imposition on a religiously plural population. Mufti Jafar Hussain organized resistance — first through a conference of demands, then through a mass march on Islamabad in July 1980 that drew tens of thousands of Shia demonstrators. The government backed down in 1981, exempting Ja'fari-school Muslims from the ordinance. This is a real, well-documented episode (though "siege" overstates what the sources describe — a sustained mass demonstration the state chose not to confront), and it illustrates the Track 1/Track 2 tension concretely: a centralizing state legal program colliding with a religiously plural population that Track 1's original civic design was meant to protect, not homogenize.</p>
+
+  <div class="note-section">
+    <h2 class="sec">A note on interpretation</h2>
+    <p>The Two-Track reading offered here is my own interpretive frame, not a finding that overturns Jalal, Shaikh, Robinson, or Alavi on their own terms — none of them is shown engaging with, or refuted by, a Track 2 argument, and I don't claim this framework "resolves" a live academic debate. What it offers is a plausible additional layer: alongside elite bargaining (Jalal), unresolved constitutional identity (Shaikh), UP-elite competition politics (Robinson), and postcolonial state autonomy (Alavi), a religiously plural, shrine-centered substrate of authority may help explain why Pakistan's "Islam" question has resisted settlement for so long. This essay should be read alongside this project's existing, more detailed treatments of Iqbal's 1930 address and of Jinnah's contested religious identity, both of which this argument leans on and neither of which it overrides.</p>
+  </div>
+
+  <h2 class="sec">Bibliography</h2>
+  <ol class="biblio">
+    <li>Ayesha Jalal, <em>The Sole Spokesman: Jinnah, the Muslim League and the Demand for Pakistan</em> (Cambridge: Cambridge University Press, 1985).</li>
+    <li>Farzana Shaikh, <em>Making Sense of Pakistan</em> (London: Hurst / New York: Columbia University Press, 2009).</li>
+    <li>Francis Robinson, <em>Separatism Among Indian Muslims: The Politics of the United Provinces' Muslims, 1860–1923</em> (Cambridge: Cambridge University Press, 1974).</li>
+    <li>Hamza Alavi, "The State in Post-Colonial Societies: Pakistan and Bangladesh," <em>New Left Review</em>, I/74 (July–August 1972), pp. 59–81.</li>
+    <li>Muhammad Iqbal, Presidential Address to the All-India Muslim League, Allahabad, 29 December 1930.</li>
+    <li>Muhammad Ali Jinnah, Address to the Constituent Assembly of Pakistan, 11 August 1947.</li>
+  </ol>
+
+  <div class="editorial">
+    <span class="lbl">Editorial note</span>
+    <p>This draft supersedes an earlier version of this argument. Retained: the five-scholar bibliographic citations (all independently confirmed), the Jinnah and Iqbal primary-source quotations, and the 1980 Zakat Ordinance/Mufti Jafar Hussain episode (confirmed, with "siege" corrected to "mass demonstration"). Cut entirely: the Sindh High Court claim (inverted — the last appellate ruling, in 1984, actually held Jinnah was "definitely not a Shia"), the "Kashmir" addition to Iqbal's 1930 proposal (already corrected in this project's Iqbal memo), and an unsourced statistic about the size of the underlying archival corpus. Reframed: the claim that this model "resolves" or "shatters" the cited scholars' arguments has been replaced with a labeled statement that this is a complementary interpretive layer, not a refutation. Before any further submission, the Robinson and Alavi paraphrases should be checked against a closer reading of the primary texts, and an independent legal-archive search should be made for the actual 1968/1984 Sindh High Court case record, which this project has not been able to locate directly.</p>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>Alvid Scriptorium — Alid codicology &amp; the two-track history of Islam</span>
+    <a class="home-link" href="index.html">← back to hub</a>
+  </div>
+</footer>
