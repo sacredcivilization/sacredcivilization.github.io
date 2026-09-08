@@ -1,0 +1,176 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<title>The Kalām Engine — Alvid Scriptorium</title>
+<style>
+  :root{
+    --paper:#e3dfce; --paper-raised:#ece8d7; --paper-line:#c9c3ac;
+    --ink:#1b1d22; --ink-soft:#4a4d53; --verdigris:#2f5d50; --verdigris-soft:#3f6e5f;
+    --brass:#8a6a2a; --track1:#5b5f6b; --track2:#2f5d50; --formal:#5b4a7a;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#15171b; --paper-raised:#1c1f24; --paper-line:#33363d;
+      --ink:#e8e3d2; --ink-soft:#a9a89c; --verdigris:#5a9884; --verdigris-soft:#4c8b77; --brass:#c9a559; --formal:#a693c9;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#15171b; --paper-raised:#1c1f24; --paper-line:#33363d;
+    --ink:#e8e3d2; --ink-soft:#a9a89c; --verdigris:#5a9884; --verdigris-soft:#4c8b77; --brass:#c9a559; --formal:#a693c9;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:"Source Sans 3",ui-sans-serif,system-ui,sans-serif; font-size:17px; line-height:1.7;}
+  a{color:var(--verdigris);}
+  .wrap{max-width:760px; margin:0 auto; padding:0 28px;}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif; font-weight:500; text-wrap:balance; margin:0;}
+  .eyebrow{font-family:"IBM Plex Mono",monospace; font-size:12.5px; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-soft);}
+  header{border-bottom:1px solid var(--paper-line); padding:18px 0;}
+  header .wrap{max-width:1080px; display:flex; justify-content:space-between; align-items:center;}
+  .back{font-family:"Fraunces",serif; font-weight:600; font-size:16px; text-decoration:none; color:var(--ink);}
+  .home-link{font-family:"IBM Plex Mono",monospace; font-size:13px; color:var(--ink-soft); text-decoration:none;}
+  article{padding:56px 0 40px;}
+  .tierbadge{display:inline-flex; align-items:center; gap:8px; font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.05em; text-transform:uppercase; color:var(--formal); border:1px solid var(--formal); padding:5px 10px; border-radius:2px;}
+  .statuspill{display:inline-flex; align-items:center; gap:6px; font-family:"IBM Plex Mono",monospace; font-size:11.5px; letter-spacing:.04em; color:var(--ink-soft); border:1px dashed var(--paper-line); padding:4px 9px; border-radius:2px; margin-left:8px;}
+  h1.title{font-size:clamp(28px,4.4vw,42px); line-height:1.15; margin-top:20px;}
+  .byline{margin-top:18px; font-family:"IBM Plex Mono",monospace; font-size:13px; color:var(--ink-soft); display:flex; gap:18px; flex-wrap:wrap;}
+  .abstract{margin-top:32px; padding:22px 24px; background:var(--paper-raised); border-radius:3px; font-size:16px; color:var(--ink-soft); border-left:3px solid var(--formal);}
+  .abstract .lbl{font-family:"IBM Plex Mono",monospace; font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--formal); display:block; margin-bottom:8px;}
+  h2.sec{font-size:22px; margin-top:52px; margin-bottom:16px; padding-top:8px;}
+  h3.subsec{font-size:17px; margin-top:28px; margin-bottom:10px; font-family:"Fraunces",Georgia,serif; font-weight:600;}
+  p{margin:16px 0; color:var(--ink);}
+  ul,ol{color:var(--ink);}
+  .axiom-box{background:var(--paper-raised); border-left:3px solid var(--verdigris); border-radius:3px; padding:14px 18px; margin:18px 0; font-size:15.5px;}
+  .axiom-box .tag{font-family:"IBM Plex Mono",monospace; font-size:11.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--verdigris); display:block; margin-bottom:4px;}
+  pre.codeblock{background:#1b1d22; color:#dcd6c4; border-radius:4px; padding:20px 22px; overflow-x:auto; font-family:"IBM Plex Mono",monospace; font-size:13px; line-height:1.6; margin:20px 0;}
+  pre.codeblock code{white-space:pre;}
+  .note-section{background:var(--paper-raised); padding:26px 26px; border-radius:3px; margin-top:20px;}
+  .note-section h2.sec{margin-top:0;}
+  ol.biblio{padding-left:22px; font-size:15px; color:var(--ink-soft);}
+  ol.biblio li{margin-bottom:10px;}
+  .editorial{margin-top:40px; padding:22px 24px; border:1px dashed var(--paper-line); border-radius:3px; font-size:14px; color:var(--ink-soft);}
+  .editorial .lbl{font-family:"IBM Plex Mono",monospace; font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-soft); display:block; margin-bottom:8px;}
+  .verify-box{margin-top:20px; padding:22px 24px; background:var(--paper-raised); border-radius:3px; border-left:3px solid var(--brass);}
+  .verify-box .lbl{font-family:"IBM Plex Mono",monospace; font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--brass); display:block; margin-bottom:8px;}
+  footer{border-top:1px solid var(--paper-line); padding:30px 0 50px; margin-top:20px;}
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px; font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--ink-soft);}
+</style>
+
+<header>
+  <div class="wrap">
+    <a class="back" href="index.html">Alvid Scriptorium</a>
+    <a class="home-link" href="index.html">← all publications</a>
+  </div>
+</header>
+
+<article class="wrap">
+  <span class="tierbadge">Formal — Computational Theology</span>
+  <span class="statuspill">v1 · M2 complete · CI verification pending</span>
+  <h1 class="title">The Kalām Engine: A Machine-Checked Necessary-Existent Argument</h1>
+  <div class="byline">
+    <span>Saad Khizar Bosal</span>
+    <span>Alvid Scriptorium</span>
+    <span>hand-derived proof, not yet compiler-verified — see §5</span>
+  </div>
+
+  <div class="abstract">
+    <span class="lbl">The argument, stated plainly</span>
+    This page formalizes one argument — the <em>Wājib al-Wujūd</em> (Necessary Existent) proof at the core of the ontology section of Naṣīr al-Dīn al-Ṭūsī's <em>Tajrīd al-I'tiqād</em>, itself inherited from Avicenna — as a machine-checkable Lean 4 theorem: if at least one Contingent entity exists, a Necessary entity exists. The proof is complete and contains no gaps (no <code>sorry</code>): given four stated premises, the conclusion follows validly. That is a narrower and more honest claim than it might sound. Formal validity says nothing about whether the premises are true, and one of them — that the causal-dependency relation admits no infinite regress — is exactly the premise a real, published scholarly dispute (Avicenna's <em>Burhān al-Taṭbīq</em> against Cantor's set theory) calls into question. The proof itself has been hand-derived and checked on paper; it has not yet been run through an actual Lean compiler, for reasons explained in §5, and that gap is stated here rather than papered over.
+  </div>
+
+  <h2 class="sec">1. Why formalize this at all</h2>
+  <p>"Computational theology" — using proof assistants to check the validity of theological or metaphysical arguments — is a real, published field, not a marketing coinage invented for this site. In 2013, Christoph Benzmüller and Bruno Woltzenlogel Paleo formally verified Kurt Gödel's ontological proof of God's existence in the Isabelle/HOL proof assistant; the result is peer-reviewed and archived in the Isabelle Archive of Formal Proofs. That project is the closest precedent for what this page attempts, and it is a useful model for how to talk about a result like this: Benzmüller and Woltzenlogel Paleo's paper demonstrates that Gödel's argument is formally valid and identifies exactly which of its axioms are doing the controversial work — it does not claim to have proven God exists, and neither does this page claim anything more for Ṭūsī's argument.</p>
+  <p>A search for prior work specifically formalizing Avicennian or Ṭūsian modal metaphysics in a proof assistant turned up nothing. That absence is reported honestly as "no comparable prior work found" rather than "the first ever" — a smaller, defensible claim, and the same discipline this project has applied elsewhere to superlatives that don't survive checking (the 1913 Wakf Act's "first private member's bill" claim being the clearest example). If this project's Lean file is in fact original in this narrow sense, it is a genuine small contribution — not a repackaging of the Gödel result, which is a different argument entirely.</p>
+
+  <h2 class="sec">2. The argument, in Ṭūsī's and Avicenna's terms</h2>
+  <p>The argument rests on a tripartite division of everything that can be thought of into three modal categories: the Necessary (that which cannot not exist), the Contingent (that which can either exist or not, and requires something outside itself to explain which), and the Impossible (that which cannot exist). Given that at least one contingent thing exists — a fact Ṭūsī and Avicenna both take as obvious from experience — each contingent thing requires a cause, and that cause, if itself contingent, requires a further cause, and so on. The argument's engine is a regress-blocking move, historically called <em>Burhān al-Taṭbīq</em> ("the argument from correspondence" or "superimposition"): an infinite regress of causes is ruled out, so the chain of causes must terminate in something that is not itself contingent — and since it exists, and nothing impossible exists, it must be Necessary. This is the load-bearing argument of the <em>Tajrīd</em>'s ontology section, and it is the one piece of that section genuinely suited to a complete, checkable formalization at the scale of a single page.</p>
+
+  <h2 class="sec">3. The formal argument, worked honestly</h2>
+  <p>Formalizing the argument means stating its premises as explicit axioms — not proving them, just being precise about exactly what is being assumed, so a reader can agree or disagree with each one individually rather than with the argument as an undifferentiated whole.</p>
+
+  <div class="axiom-box"><span class="tag">A1 — Trichotomy</span>Every entity's modal status is exactly one of Necessary, Contingent, or Impossible.</div>
+  <div class="axiom-box"><span class="tag">A2 — No impossible existents</span>If an entity's status is Impossible, it does not exist. Definitional, and uncontroversial.</div>
+  <div class="axiom-box"><span class="tag">A3 — Sufficient reason for contingents</span>If a Contingent entity exists, it has a cause — some other existing entity that explains it. This is the substantive metaphysical premise. A philosopher who accepts brute, uncaused contingent facts rejects this one; the argument's <em>validity</em> doesn't depend on A3 being true, only its <em>soundness</em> does.</div>
+  <div class="axiom-box"><span class="tag">A4 — Well-foundedness of causation</span>The causal-dependency relation admits no infinite descending chain — you cannot regress backward through causes forever. This is where <em>Burhān al-Taṭbīq</em> comes in historically, and where the argument is genuinely contested — see §4.</div>
+
+  <p><strong>Theorem.</strong> If at least one Contingent entity exists, then a Necessary entity exists.</p>
+  <p><strong>Proof idea.</strong> Take the chain of causal ancestors of a given existing, Contingent entity. Because causation is well-founded (A4), this chain cannot regress forever, so it has a minimal element — an existing, Contingent entity with no contingent cause behind it. By A3 that entity still has a cause; that cause cannot be Contingent (it would extend the chain past its supposed minimum) and cannot be Impossible (A2 rules out an existing Impossible entity); by A1, it must be Necessary. This is exactly the shape of argument well-founded recursion in a proof assistant is built to check.</p>
+
+  <h3 class="subsec">The Lean 4 source</h3>
+  <p>The theorem is named <code>necessary_root_exists</code>, after the (unfinished, <code>sorry</code>-containing) theorem of the same name in the corpus draft this page replaces. Below is the complete file — nothing has been abbreviated or omitted.</p>
+
+  <pre class="codeblock"><code>axiom Entity : Type
+
+inductive Status where
+  | necessary  : Status
+  | contingent : Status
+  | impossible : Status
+deriving DecidableEq, Repr
+
+axiom status   : Entity → Status
+axiom Exists_  : Entity → Prop
+axiom cause    : Entity → Entity → Prop
+
+-- A2 (No impossible existents)
+axiom A2 : ∀ e : Entity, status e = Status.impossible → ¬ Exists_ e
+
+-- A3 (Principle of Sufficient Reason for contingents)
+axiom A3 : ∀ e : Entity, Exists_ e → status e = Status.contingent →
+    ∃ c : Entity, Exists_ c ∧ cause c e
+
+-- A4 (Well-foundedness of causation)
+axiom A4 : WellFounded cause
+
+theorem necessary_root_exists
+    (x0 : Entity) (hx0_exists : Exists_ x0) (hx0_contingent : status x0 = Status.contingent) :
+    ∃ n : Entity, Exists_ n ∧ status n = Status.necessary := by
+  have main : ∀ e : Entity, Acc cause e →
+      Exists_ e → status e = Status.contingent →
+      ∃ n : Entity, Exists_ n ∧ status n = Status.necessary := by
+    intro e h
+    induction h with
+    | intro y _ ih =>
+      intro hy_exists hy_contingent
+      obtain ⟨c, hc_exists, hc_cause⟩ := A3 y hy_exists hy_contingent
+      match hstat : status c with
+      | .necessary  =&gt; exact ⟨c, hc_exists, hstat⟩
+      | .impossible =&gt; exact absurd hc_exists (A2 c hstat)
+      | .contingent =&gt; exact ih c hc_cause hc_exists hstat
+  exact main x0 (A4.apply x0) hx0_exists hx0_contingent
+
+#print axioms necessary_root_exists</code></pre>
+
+  <p>The file uses only Lean 4's own core library (<code>Acc</code>, <code>WellFounded</code>) — no Mathlib import — so the entire dependency graph of this proof is the Lean compiler itself. The full source, project files, and CI configuration are in the <a href="https://github.com/sacredcivilization/sacredcivilization.github.io/tree/main/kalam-engine" target="_blank" rel="noopener">kalam-engine</a> directory of this site's repository (§5 below has the build status).</p>
+
+  <h2 class="sec">4. The honest complication: <em>Burhān al-Taṭbīq</em> and Cantor</h2>
+  <p>Premise A4 needs its own justification, and the <em>Tajrīd</em> inherits the standard one from Avicenna's <em>Shifāʾ</em>: if an infinite causal chain existed, one could biject a proper sub-chain of it onto the whole chain, which the argument treats as an impossible "part equals whole." Ṭūsī restates and relies on this Avicennian argument rather than originating it — credit for it belongs to Avicenna, with Ṭūsī's use of it noted separately.</p>
+  <p>The complication is that Georg Cantor showed exactly this kind of bijection is entirely consistent for infinite sets — the natural numbers biject with the even numbers without contradiction — which is precisely the move <em>Burhān al-Taṭbīq</em> treats as impossible. This is a live, published scholarly discussion, not something introduced on this page; see the sources below. The standard defense holds that the argument targets concrete, ordered, <em>existential</em> dependency chains, not abstract set cardinality — whether bijection-without-contradiction (a fact about abstract infinite sets) transfers to a chain of really existing, causally ordered things is exactly what remains disputed. That is a live philosophical position, not a settled rebuttal of Cantor, and not a settled defeat by Cantor either. The proof in §3 is valid regardless of how this dispute is resolved; whether it is <em>sound</em> depends on it, and this page takes no side.</p>
+
+  <h2 class="sec">5. Verification status — read this before citing the proof as checked</h2>
+  <div class="verify-box">
+    <span class="lbl">Where this actually stands</span>
+    <p>The Lean file above was written and checked by hand, reasoning through Lean 4's core well-founded-recursion API line by line — it was <strong>not compiled locally</strong> by its author, because the environment used to write it had no access to a Lean toolchain (its network access is restricted to a narrow allowlist that excludes the Lean/Mathlib distribution channels). That is disclosed here deliberately: a proof that "looks right" and contains no visible <code>sorry</code> is not the same thing as a proof a compiler has actually accepted, and this project does not get to exempt its own formal-methods work from the verification standard it applies to everything else on this site.</p>
+    <p>The real verification runs in the linked repository's continuous-integration workflow, which installs the Lean toolchain and runs <code>lake build</code> on GitHub's own infrastructure on every push — an environment with full network access, unlike the one this page was drafted in. <code>#print axioms necessary_root_exists</code> is embedded directly in the source file, so a successful build's log states, in full, exactly which axioms the theorem rests on. <strong>Treat the CI status on the repository, not the prose on this page, as the actual answer to "is this proven."</strong> This section will be updated with the build result once the repository is public and CI has run.</p>
+    <p>Repository: <a href="https://github.com/sacredcivilization/sacredcivilization.github.io/tree/main/kalam-engine" target="_blank" rel="noopener">sacredcivilization/sacredcivilization.github.io — /kalam-engine/</a>. Build status: <a href="https://github.com/sacredcivilization/sacredcivilization.github.io/actions/workflows/kalam-engine-build.yml" target="_blank" rel="noopener">Actions → "Kalam Engine — build and verify"</a>.</p>
+  </div>
+
+  <h2 class="sec">Bibliography</h2>
+  <ol class="biblio">
+    <li>Christoph Benzmüller and Bruno Woltzenlogel Paleo, <a href="https://arxiv.org/abs/1308.4526" target="_blank" rel="noopener">"Formalization, Mechanization and Automation of Gödel's Proof of God's Existence"</a>, arXiv:1308.4526.</li>
+    <li><a href="https://isa-afp.org/browser_info/current/AFP/GoedelGod/document.pdf" target="_blank" rel="noopener">"Gödel's God" in Isabelle/HOL</a>, Archive of Formal Proofs.</li>
+    <li>"Avicenna's argument against infinite regress in <em>The Metaphysics of the Healing</em>, as a step in proving the existence of God" — <a href="https://www.academia.edu/8350907/Avicenna_s_argument_against_infinite_regress_in_The_Metaphysics_of_the_Healing_as_a_step_in_proving_the_existence_of_God" target="_blank" rel="noopener">Academia.edu</a>.</li>
+    <li>"Avicenna on Mathematical Infinity" (forthcoming, <em>Archiv für Geschichte der Philosophie</em>) — <a href="https://www.repository.cam.ac.uk/bitstreams/66000c81-dae8-4d2b-89e7-e2990e1f50f9/download" target="_blank" rel="noopener">Cambridge repository</a>.</li>
+    <li>"Has Cantor Proved the Muslim Theologians Wrong?" — <a href="https://seekersguidance.org/answers/islamic-belief/has-cantor-proved-the-muslim-theologians-wrong/" target="_blank" rel="noopener">SeekersGuidance</a>.</li>
+    <li>This project, planning document <em>claude/kalam-computational-theology-scope-v1.md</em>, for the full v1 scope decision and the deferred sections (deontic-logic <em>Walāyah</em> formalization, the Arabic NLP/knowledge-graph pipeline, and the rejected HoTT framing).</li>
+  </ol>
+
+  <div class="editorial">
+    <span class="lbl">Editorial note</span>
+    <p>This page covers only the <em>Wājib al-Wujūd</em> argument (v1 scope, milestone M2). Three pieces of the original corpus draft this replaces are deliberately deferred, not silently dropped: a "deontic game theory" treatment of <em>Walāyah</em>/Luṭf (no agents, strategies, or payoffs were ever actually defined in the source material, so dressing the doctrine in game-theory vocabulary without a real model would repeat the exact overclaiming pattern this page exists to avoid); a four-layer Arabic NLP/knowledge-graph pipeline (a real, larger engineering project, worth doing separately and later); and a Homotopy Type Theory framing (ordinary modal logic is the right tool for necessity/contingency, and HoTT added nothing but decoration to the original draft). None of the three should be read back into this page's scope.</p>
+    <p>This page is new content in a new tier of the site ("Formal — Computational Theology"), not a Tier III essay. As of this push it is linked from the homepage navigation and the <code>kalam-engine</code> directory and its CI workflow are live in this site's GitHub repository (§5) — milestone M3. A Hugging Face Space (M4) has not been built and is not part of this push.</p>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>Alvid Scriptorium — Alid codicology &amp; the two-track history of Islam</span>
+    <a class="home-link" href="index.html">← back to hub</a>
+  </div>
+</footer>
