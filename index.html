@@ -1,577 +1,599 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <title>Alvid Scriptorium</title>
 <style>
-  :root{
-    --paper:#e3dfce;
-    --paper-raised:#ece8d7;
-    --paper-line:#c9c3ac;
-    --ink:#1b1d22;
-    --ink-soft:#4a4d53;
-    --verdigris:#2f5d50;
-    --verdigris-soft:#3f6e5f;
-    --brass:#8a6a2a;
-    --track1:#5b5f6b;
-    --track2:#2f5d50;
-    --shadow: 220 15% 10%;
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --paper:#15171b;
-      --paper-raised:#1c1f24;
-      --paper-line:#33363d;
-      --ink:#e8e3d2;
-      --ink-soft:#a9a89c;
-      --verdigris:#5a9884;
-      --verdigris-soft:#4c8b77;
-      --brass:#c9a559;
-      --track1:#9aa0ac;
-      --track2:#5a9884;
-    }
-  }
-  :root[data-theme="dark"]{
-    --paper:#15171b;
-    --paper-raised:#1c1f24;
-    --paper-line:#33363d;
-    --ink:#e8e3d2;
-    --ink-soft:#a9a89c;
-    --verdigris:#5a9884;
-    --verdigris-soft:#4c8b77;
-    --brass:#c9a559;
-    --track1:#9aa0ac;
-    --track2:#5a9884;
-  }
+:root{
+--paper:#e3dfce;
+--paper-raised:#ece8d7;
+--paper-line:#c9c3ac;
+--ink:#1b1d22;
+--ink-soft:#4a4d53;
+--verdigris:#2f5d50;
+--verdigris-soft:#3f6e5f;
+--brass:#8a6a2a;
+--track1:#5b5f6b;
+--track2:#2f5d50;
+--formal:#5b4a7a;
+--shadow: 220 15% 10%;
+}
+@media (prefers-color-scheme: dark){
+:root:not([data-theme="light"]){
+--paper:#15171b;
+--paper-raised:#1c1f24;
+--paper-line:#33363d;
+--ink:#e8e3d2;
+--ink-soft:#a9a89c;
+--verdigris:#5a9884;
+--verdigris-soft:#4c8b77;
+--brass:#c9a559;
+--track1:#9aa0ac;
+--track2:#5a9884;
+--formal:#a693c9;
+}
+}
+:root[data-theme="dark"]{
+--paper:#15171b;
+--paper-raised:#1c1f24;
+--paper-line:#33363d;
+--ink:#e8e3d2;
+--ink-soft:#a9a89c;
+--verdigris:#5a9884;
+--verdigris-soft:#4c8b77;
+--brass:#c9a559;
+--track1:#9aa0ac;
+--track2:#5a9884;
+--formal:#a693c9;
+}
 
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:"Source Sans 3", ui-sans-serif, system-ui, sans-serif;
-    font-size:17px;
-    line-height:1.6;
-  }
-  a{color:inherit;}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
-  h1,h2,h3{
-    font-family:"Fraunces", Georgia, "Times New Roman", serif;
-    font-weight:500;
-    text-wrap:balance;
-    margin:0;
-  }
-  .eyebrow{
-    font-family:"IBM Plex Mono", ui-monospace, monospace;
-    font-size:12.5px;
-    letter-spacing:.09em;
-    text-transform:uppercase;
-    color:var(--ink-soft);
-  }
-  .mono{font-family:"IBM Plex Mono", ui-monospace, monospace;}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+margin:0;
+background:var(--paper);
+color:var(--ink);
+font-family:"Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+font-size:17px;
+line-height:1.6;
+}
+a{color:inherit;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+h1,h2,h3{
+font-family:"Fraunces", Georgia, "Times New Roman", serif;
+font-weight:500;
+text-wrap:balance;
+margin:0;
+}
+.eyebrow{
+font-family:"IBM Plex Mono", ui-monospace, monospace;
+font-size:12.5px;
+letter-spacing:.09em;
+text-transform:uppercase;
+color:var(--ink-soft);
+}
+.mono{font-family:"IBM Plex Mono", ui-monospace, monospace;}
 
-  /* ---------- header ---------- */
-  header{
-    position:sticky; top:0; z-index:40;
-    background:color-mix(in srgb, var(--paper) 88%, transparent);
-    backdrop-filter:blur(6px);
-    border-bottom:1px solid var(--paper-line);
-  }
-  .nav{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:16px 0;
-  }
-  .brand{display:flex; align-items:baseline; gap:10px;}
-  .brand .mark{
-    font-family:"Fraunces", serif; font-weight:600; font-size:clamp(16px,2.4vw,22px); letter-spacing:.01em; white-space:nowrap;
-  }
-  .brand .tag{ font-size:12.5px; color:var(--ink-soft); font-family:"IBM Plex Mono", monospace; display:none;}
-  @media (min-width:720px){ .brand .tag{display:inline;} }
-  nav.links{display:flex; gap:22px; font-size:14.5px;}
-  nav.links a{text-decoration:none; color:var(--ink-soft); white-space:nowrap;}
-  nav.links a:hover{color:var(--ink);}
-  nav.links{overflow-x:auto; -ms-overflow-style:none; scrollbar-width:none;}
-  nav.links::-webkit-scrollbar{display:none;}
+/* ---------- header ---------- */
+header{
+position:sticky; top:0; z-index:40;
+background:color-mix(in srgb, var(--paper) 88%, transparent);
+backdrop-filter:blur(6px);
+border-bottom:1px solid var(--paper-line);
+}
+.nav{
+display:flex; align-items:center; justify-content:space-between;
+padding:16px 0;
+}
+.brand{display:flex; align-items:baseline; gap:10px;}
+.brand .mark{
+font-family:"Fraunces", serif; font-weight:600; font-size:clamp(16px,2.4vw,22px); letter-spacing:.01em; white-space:nowrap;
+}
+.brand .tag{ font-size:12.5px; color:var(--ink-soft); font-family:"IBM Plex Mono", monospace; display:none;}
+@media (min-width:720px){ .brand .tag{display:inline;} }
+nav.links{display:flex; gap:22px; font-size:14.5px;}
+nav.links a{text-decoration:none; color:var(--ink-soft); white-space:nowrap;}
+nav.links a:hover{color:var(--ink);}
+nav.links{overflow-x:auto; -ms-overflow-style:none; scrollbar-width:none;}
+nav.links::-webkit-scrollbar{display:none;}
 
-  /* ---------- hero ---------- */
-  .hero{padding:64px 0 56px; border-bottom:1px solid var(--paper-line);}
-  .hero .eyebrow{margin-bottom:18px;}
-  .hero h1{
-    font-size:clamp(34px, 5.4vw, 54px);
-    line-height:1.08;
-    max-width:15ch;
-  }
-  .hero .lede{
-    max-width:62ch;
-    margin-top:22px;
-    font-size:19px;
-    color:var(--ink-soft);
-  }
-  .hero .lede strong{color:var(--ink); font-weight:600;}
-  .hero-actions{display:flex; gap:14px; margin-top:30px; flex-wrap:wrap;}
-  .btn{
-    font-family:"IBM Plex Mono", monospace;
-    font-size:13.5px;
-    padding:11px 18px;
-    border-radius:2px;
-    text-decoration:none;
-    border:1px solid var(--ink);
-    display:inline-flex; align-items:center; gap:8px;
-  }
-  .btn.solid{background:var(--verdigris); border-color:var(--verdigris); color:#f2efe2;}
-  .btn.solid:hover{background:var(--verdigris-soft);}
-  .btn.ghost{color:var(--ink);}
-  .btn.ghost:hover{background:var(--paper-raised);}
+/* ---------- hero ---------- */
+.hero{padding:64px 0 56px; border-bottom:1px solid var(--paper-line);}
+.hero .eyebrow{margin-bottom:18px;}
+.hero h1{
+font-size:clamp(34px, 5.4vw, 54px);
+line-height:1.08;
+max-width:15ch;
+}
+.hero .lede{
+max-width:62ch;
+margin-top:22px;
+font-size:19px;
+color:var(--ink-soft);
+}
+.hero .lede strong{color:var(--ink); font-weight:600;}
+.hero-actions{display:flex; gap:14px; margin-top:30px; flex-wrap:wrap;}
+.btn{
+font-family:"IBM Plex Mono", monospace;
+font-size:13.5px;
+padding:11px 18px;
+border-radius:2px;
+text-decoration:none;
+border:1px solid var(--ink);
+display:inline-flex; align-items:center; gap:8px;
+}
+.btn.solid{background:var(--verdigris); border-color:var(--verdigris); color:#f2efe2;}
+.btn.solid:hover{background:var(--verdigris-soft);}
+.btn.ghost{color:var(--ink);}
+.btn.ghost:hover{background:var(--paper-raised);}
 
-  /* ---------- reframe strip ---------- */
-  .reframe{
-    padding:40px 0;
-    border-bottom:1px solid var(--paper-line);
-    background:var(--paper-raised);
-  }
-  .reframe .grid{
-    display:grid; grid-template-columns: 1fr; gap:26px;
-  }
-  @media(min-width:800px){ .reframe .grid{grid-template-columns: 1fr 1fr;} }
-  .reframe p{margin:0; font-size:16px; color:var(--ink-soft);}
-  .reframe .lead{font-family:"Fraunces", serif; font-style:italic; font-size:20px; color:var(--ink); font-weight:500;}
+/* ---------- reframe strip ---------- */
+.reframe{
+padding:40px 0;
+border-bottom:1px solid var(--paper-line);
+background:var(--paper-raised);
+}
+.reframe .grid{
+display:grid; grid-template-columns: 1fr; gap:26px;
+}
+@media(min-width:800px){ .reframe .grid{grid-template-columns: 1fr 1fr;} }
+.reframe p{margin:0; font-size:16px; color:var(--ink-soft);}
+.reframe .lead{font-family:"Fraunces", serif; font-style:italic; font-size:20px; color:var(--ink); font-weight:500;}
 
-  /* ---------- section shell ---------- */
-  section{padding:72px 0; border-bottom:1px solid var(--paper-line);}
-  .section-head{display:flex; justify-content:space-between; align-items:flex-end; gap:20px; margin-bottom:38px; flex-wrap:wrap;}
-  .section-head h2{font-size:clamp(24px,3vw,32px);}
-  .section-head .num{font-family:"IBM Plex Mono",monospace; font-size:13px; color:var(--ink-soft);}
+/* ---------- section shell ---------- */
+section{padding:72px 0; border-bottom:1px solid var(--paper-line);}
+.section-head{display:flex; justify-content:space-between; align-items:flex-end; gap:20px; margin-bottom:38px; flex-wrap:wrap;}
+.section-head h2{font-size:clamp(24px,3vw,32px);}
+.section-head .num{font-family:"IBM Plex Mono",monospace; font-size:13px; color:var(--ink-soft);}
 
-  /* ---------- two tracks ---------- */
-  .tracks{display:grid; grid-template-columns:1fr; gap:0; border:1px solid var(--paper-line); border-radius:3px; overflow:hidden;}
-  @media(min-width:760px){ .tracks{grid-template-columns:1fr 1fr;} }
-  .track{padding:30px 28px; position:relative;}
-  .track + .track{border-top:1px solid var(--paper-line);}
-  @media(min-width:760px){ .track + .track{border-top:none; border-left:1px solid var(--paper-line);} }
-  .track::before{
-    content:"";
-    position:absolute; left:0; top:0; bottom:0; width:4px;
-  }
-  .track.t1::before{background:var(--track1);}
-  .track.t2::before{background:var(--track2);}
-  .track .kicker{font-family:"IBM Plex Mono",monospace; font-size:12.5px; letter-spacing:.08em; text-transform:uppercase;}
-  .track.t1 .kicker{color:var(--track1);}
-  .track.t2 .kicker{color:var(--track2);}
-  .track h3{font-size:22px; margin-top:10px;}
-  .track p{color:var(--ink-soft); font-size:15.5px; margin-top:12px;}
-  .track ul{margin:14px 0 0; padding-left:18px; color:var(--ink-soft); font-size:15px;}
-  .track li{margin-bottom:6px;}
-  .not-claim{
-    margin-top:52px; padding:22px 24px; border:1px dashed var(--paper-line); border-radius:3px;
-    font-size:15px; color:var(--ink-soft);
-  }
-  .not-claim strong{color:var(--ink); font-weight:600;}
+/* ---------- two tracks ---------- */
+.tracks{display:grid; grid-template-columns:1fr; gap:0; border:1px solid var(--paper-line); border-radius:3px; overflow:hidden;}
+@media(min-width:760px){ .tracks{grid-template-columns:1fr 1fr;} }
+.track{padding:30px 28px; position:relative;}
+.track + .track{border-top:1px solid var(--paper-line);}
+@media(min-width:760px){ .track + .track{border-top:none; border-left:1px solid var(--paper-line);} }
+.track::before{
+content:"";
+position:absolute; left:0; top:0; bottom:0; width:4px;
+}
+.track.t1::before{background:var(--track1);}
+.track.t2::before{background:var(--track2);}
+.track .kicker{font-family:"IBM Plex Mono",monospace; font-size:12.5px; letter-spacing:.08em; text-transform:uppercase;}
+.track.t1 .kicker{color:var(--track1);}
+.track.t2 .kicker{color:var(--track2);}
+.track h3{font-size:22px; margin-top:10px;}
+.track p{color:var(--ink-soft); font-size:15.5px; margin-top:12px;}
+.track ul{margin:14px 0 0; padding-left:18px; color:var(--ink-soft); font-size:15px;}
+.track li{margin-bottom:6px;}
+.not-claim{
+margin-top:52px; padding:22px 24px; border:1px dashed var(--paper-line); border-radius:3px;
+font-size:15px; color:var(--ink-soft);
+}
+.not-claim strong{color:var(--ink); font-weight:600;}
 
-  /* ---------- chain diagram ---------- */
-  .chain-card{border:1px solid var(--paper-line); border-radius:3px; padding:32px 28px; background:var(--paper-raised);}
-  .chain-card .cap{font-size:14.5px; color:var(--ink-soft); margin-top:18px; max-width:64ch;}
-  svg text{font-family:"IBM Plex Mono", monospace; fill:var(--ink);}
-  svg .role{fill:var(--ink-soft); font-size:11px;}
-  svg .name{font-size:13px; font-weight:500;}
-  svg .rail{stroke:var(--verdigris); stroke-width:2;}
-  svg .node{fill:var(--paper); stroke:var(--verdigris); stroke-width:2;}
+/* ---------- chain diagram ---------- */
+.chain-card{border:1px solid var(--paper-line); border-radius:3px; padding:32px 28px; background:var(--paper-raised);}
+.chain-card .cap{font-size:14.5px; color:var(--ink-soft); margin-top:18px; max-width:64ch;}
+svg text{font-family:"IBM Plex Mono", monospace; fill:var(--ink);}
+svg .role{fill:var(--ink-soft); font-size:11px;}
+svg .name{font-size:13px; font-weight:500;}
+svg .rail{stroke:var(--verdigris); stroke-width:2;}
+svg .node{fill:var(--paper); stroke:var(--verdigris); stroke-width:2;}
 
-  /* ---------- corridors ---------- */
-  .corridors{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:1px; background:var(--paper-line); border:1px solid var(--paper-line);}
-  .corridor{background:var(--paper); padding:26px 24px; min-height:150px; display:flex; flex-direction:column; justify-content:space-between;}
-  .corridor .idx{font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--brass);}
-  .corridor h3{font-size:18px; margin-top:14px; line-height:1.25;}
-  .corridor p{font-size:14px; color:var(--ink-soft); margin-top:10px;}
+/* ---------- corridors ---------- */
+.corridors{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:1px; background:var(--paper-line); border:1px solid var(--paper-line);}
+.corridor{background:var(--paper); padding:26px 24px; min-height:150px; display:flex; flex-direction:column; justify-content:space-between;}
+.corridor .idx{font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--brass);}
+.corridor h3{font-size:18px; margin-top:14px; line-height:1.25;}
+.corridor p{font-size:14px; color:var(--ink-soft); margin-top:10px;}
 
-  /* ---------- essays list ---------- */
-  .essay{
-    display:grid; grid-template-columns: 90px 1fr auto; gap:20px; align-items:baseline;
-    padding:20px 0; border-top:1px solid var(--paper-line);
-  }
-  .essay:last-child{border-bottom:1px solid var(--paper-line);}
-  .essay .tag{
-    font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.04em;
-    color:var(--verdigris); border:1px solid var(--verdigris); border-radius:2px;
-    padding:3px 7px; text-transform:uppercase; white-space:nowrap; justify-self:start;
-  }
-  .essay h3{font-size:17.5px; font-weight:500; font-family:"Fraunces",serif;}
-  .essay .meta{font-family:"IBM Plex Mono",monospace; font-size:12.5px; color:var(--ink-soft); text-align:right; white-space:nowrap;}
-  @media(max-width:640px){
-    .essay{grid-template-columns:1fr; gap:6px;}
-    .essay .meta{text-align:left;}
-  }
+/* ---------- essays list ---------- */
+.essay{
+display:grid; grid-template-columns: 90px 1fr auto; gap:20px; align-items:baseline;
+padding:20px 0; border-top:1px solid var(--paper-line);
+}
+.essay:last-child{border-bottom:1px solid var(--paper-line);}
+.essay .tag{
+font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.04em;
+color:var(--verdigris); border:1px solid var(--verdigris); border-radius:2px;
+padding:3px 7px; text-transform:uppercase; white-space:nowrap; justify-self:start;
+}
+.essay h3{font-size:17.5px; font-weight:500; font-family:"Fraunces",serif;}
+.essay .meta{font-family:"IBM Plex Mono",monospace; font-size:12.5px; color:var(--ink-soft); text-align:right; white-space:nowrap;}
+@media(max-width:640px){
+.essay{grid-template-columns:1fr; gap:6px;}
+.essay .meta{text-align:left;}
+}
 
-  /* ---------- publications ---------- */
-  .pub{
-    display:flex; justify-content:space-between; align-items:flex-start; gap:24px;
-    padding:24px 0; border-top:1px solid var(--paper-line); flex-wrap:wrap;
-  }
-  .pub:last-child{border-bottom:1px solid var(--paper-line);}
-  .pub h3{font-size:19px; max-width:52ch;}
-  .pub .venue{font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--brass); margin-top:8px; text-transform:uppercase; letter-spacing:.04em;}
-  .status{
-    font-family:"IBM Plex Mono",monospace; font-size:11.5px; padding:5px 10px; border-radius:2px;
-    border:1px solid var(--paper-line); color:var(--ink-soft); white-space:nowrap; height:fit-content;
-  }
-  .profiles{display:flex; gap:12px; flex-wrap:wrap; margin-top:34px;}
-  .profile-link{
-    display:flex; align-items:center; gap:9px; font-size:14px; text-decoration:none;
-    border:1px solid var(--paper-line); padding:9px 14px; border-radius:2px; color:var(--ink);
-  }
-  .profile-link:hover{border-color:var(--verdigris);}
-  .dot{width:7px; height:7px; border-radius:50%; background:var(--brass);}
+/* ---------- publications ---------- */
+.pub{
+display:flex; justify-content:space-between; align-items:flex-start; gap:24px;
+padding:24px 0; border-top:1px solid var(--paper-line); flex-wrap:wrap;
+}
+.pub:last-child{border-bottom:1px solid var(--paper-line);}
+.pub h3{font-size:19px; max-width:52ch;}
+.pub .venue{font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--brass); margin-top:8px; text-transform:uppercase; letter-spacing:.04em;}
+.status{
+font-family:"IBM Plex Mono",monospace; font-size:11.5px; padding:5px 10px; border-radius:2px;
+border:1px solid var(--paper-line); color:var(--ink-soft); white-space:nowrap; height:fit-content;
+}
+.profiles{display:flex; gap:12px; flex-wrap:wrap; margin-top:34px;}
+.profile-link{
+display:flex; align-items:center; gap:9px; font-size:14px; text-decoration:none;
+border:1px solid var(--paper-line); padding:9px 14px; border-radius:2px; color:var(--ink);
+}
+.profile-link:hover{border-color:var(--verdigris);}
+.dot{width:7px; height:7px; border-radius:50%; background:var(--brass);}
 
-  /* ---------- glossary ---------- */
-  .glossary{display:grid; grid-template-columns:1fr; gap:0;}
-  @media(min-width:700px){ .glossary{grid-template-columns:1fr 1fr;} }
-  .term{padding:18px 0; border-top:1px solid var(--paper-line);}
-  @media(min-width:700px){ .term{padding-right:30px;} .glossary > .term:nth-child(odd){padding-right:30px;} .glossary > .term:nth-child(even){padding-left:30px; border-left:1px solid var(--paper-line);} }
-  .term .w{font-family:"Fraunces",serif; font-style:italic; font-size:18px; color:var(--verdigris);}
-  .term p{font-size:14.5px; color:var(--ink-soft); margin:6px 0 0;}
+/* ---------- glossary ---------- */
+.glossary{display:grid; grid-template-columns:1fr; gap:0;}
+@media(min-width:700px){ .glossary{grid-template-columns:1fr 1fr;} }
+.term{padding:18px 0; border-top:1px solid var(--paper-line);}
+@media(min-width:700px){ .term{padding-right:30px;} .glossary > .term:nth-child(odd){padding-right:30px;} .glossary > .term:nth-child(even){padding-left:30px; border-left:1px solid var(--paper-line);} }
+.term .w{font-family:"Fraunces",serif; font-style:italic; font-size:18px; color:var(--verdigris);}
+.term p{font-size:14.5px; color:var(--ink-soft); margin:6px 0 0;}
 
-  /* ---------- methodology teaser ---------- */
-  .tiers{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:30px;}
-  @media(min-width:760px){ .tiers{grid-template-columns:repeat(4,1fr);} }
-  .tier{border:1px solid var(--paper-line); border-radius:3px; padding:18px 16px;}
-  .tier .rn{font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--brass);}
-  .tier h4{font-family:"Fraunces",serif; font-weight:500; font-size:16px; margin:8px 0 6px;}
-  .tier p{font-size:13px; color:var(--ink-soft); margin:0;}
+/* ---------- methodology teaser ---------- */
+.tiers{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:30px;}
+@media(min-width:760px){ .tiers{grid-template-columns:repeat(4,1fr);} }
+.tier{border:1px solid var(--paper-line); border-radius:3px; padding:18px 16px;}
+.tier .rn{font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--brass);}
+.tier h4{font-family:"Fraunces",serif; font-weight:500; font-size:16px; margin:8px 0 6px;}
+.tier p{font-size:13px; color:var(--ink-soft); margin:0;}
 
-  footer{padding:44px 0 60px;}
-  footer .cols{display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; align-items:flex-start;}
-  footer .mark{font-family:"Fraunces",serif; font-size:18px; font-weight:600;}
-  footer p{color:var(--ink-soft); font-size:13.5px; max-width:40ch;}
-  footer .fine{font-family:"IBM Plex Mono",monospace; font-size:11.5px; color:var(--ink-soft); margin-top:30px;}
+footer{padding:44px 0 60px;}
+footer .cols{display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; align-items:flex-start;}
+footer .mark{font-family:"Fraunces",serif; font-size:18px; font-weight:600;}
+footer p{color:var(--ink-soft); font-size:13.5px; max-width:40ch;}
+footer .fine{font-family:"IBM Plex Mono",monospace; font-size:11.5px; color:var(--ink-soft); margin-top:30px;}
 </style>
 
 <header>
-  <div class="wrap nav">
-    <div class="brand">
-      <span class="mark">Alvid Scriptorium</span>
-      <span class="tag">alid codicology &amp; the two-track history of islam</span>
-    </div>
-    <nav class="links">
-      <a href="#framework">Framework</a>
-      <a href="#corridors">Corridors</a>
-      <a href="#essays">Essays</a>
-      <a href="#publications">Publications</a>
-      <a href="#glossary">Codicology</a>
-      <a href="#methodology">Methodology</a>
-    </nav>
-  </div>
+<div class="wrap nav">
+<div class="brand">
+<span class="mark">Alvid Scriptorium</span>
+<span class="tag">alid codicology &amp; the two-track history of islam</span>
+</div>
+<nav class="links">
+<a href="#framework">Framework</a>
+<a href="#corridors">Corridors</a>
+<a href="#essays">Essays</a>
+<a href="#formal">Formal</a>
+<a href="#publications">Publications</a>
+<a href="#glossary">Codicology</a>
+<a href="#methodology">Methodology</a>
+</nav>
+</div>
 </header>
 
 <section class="hero">
-  <div class="wrap">
-    <div class="eyebrow">An independent research hub</div>
-    <h1>Two tracks ran through Islamic civilization. Most histories only follow one.</h1>
-    <p class="lede">This project reads Islamic history through an <strong>institutional</strong> lens rather than a doctrinal one: alongside the formal record of dynasties, armies, and courts, a parallel infrastructure of hereditary religious prestige, endowment economies, and scholarly transmission chains shaped how authority actually moved. Reading it this way is a question about institutions, not a claim about whose theology was correct.</p>
-    <div class="hero-actions">
-      <a class="btn solid" href="#framework">Read the framework</a>
-      <a class="btn ghost" href="#publications">Publications &amp; ORCID</a>
-    </div>
-  </div>
+<div class="wrap">
+<div class="eyebrow">An independent research hub</div>
+<h1>Two tracks ran through Islamic civilization. Most histories only follow one.</h1>
+<p class="lede">This project reads Islamic history through an <strong>institutional</strong> lens rather than a doctrinal one: alongside the formal record of dynasties, armies, and courts, a parallel infrastructure of hereditary religious prestige, endowment economies, and scholarly transmission chains shaped how authority actually moved. Reading it this way is a question about institutions, not a claim about whose theology was correct.</p>
+<div class="hero-actions">
+<a class="btn solid" href="#framework">Read the framework</a>
+<a class="btn ghost" href="#publications">Publications &amp; ORCID</a>
+</div>
+</div>
 </section>
 
 <div class="reframe">
-  <div class="wrap grid">
-    <p class="lead">"Track 2 is not a hidden truth beneath Sunni or Shiʿi Islam. It is a way of asking who actually held authority, and how it was transmitted, that the Sunni/Shiʿi frame alone doesn't answer."</p>
-    <p>Sectarian historiography asks which doctrine a given ruler, order, or scholar held. This project asks a different, adjacent question: which of two coexisting systems of authority — the dynastic-legal state, or the genealogical and charismatic network running alongside it — actually explains a given institution's survival, funding, and reach. The two questions can have different answers for the same historical figure, and neither one is secretly the other.</p>
-  </div>
+<div class="wrap grid">
+<p class="lead">"Track 2 is not a hidden truth beneath Sunni or Shiʿi Islam. It is a way of asking who actually held authority, and how it was transmitted, that the Sunni/Shiʿi frame alone doesn't answer."</p>
+<p>Sectarian historiography asks which doctrine a given ruler, order, or scholar held. This project asks a different, adjacent question: which of two coexisting systems of authority — the dynastic-legal state, or the genealogical and charismatic network running alongside it — actually explains a given institution's survival, funding, and reach. The two questions can have different answers for the same historical figure, and neither one is secretly the other.</p>
+</div>
 </div>
 
 <section id="framework">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>The framework</h2>
-      <span class="num">01 — reading Islamic institutional history in two tracks</span>
-    </div>
-    <div class="tracks">
-      <div class="track t1">
-        <div class="kicker">Track 1</div>
-        <h3>The formal state</h3>
-        <p>Dynastic and imperial authority: caliphates, sultanates, and their successor states, legitimated by conquest, treaty, and codified law.</p>
-        <ul>
-          <li>Court-appointed judiciary and state madhhab</li>
-          <li>Kharāj / jizya fiscal administration</li>
-          <li>Standing armies and provincial governors</li>
-          <li>Dynastic succession and imperial chancery</li>
-        </ul>
-      </div>
-      <div class="track t2">
-        <div class="kicker">Track 2</div>
-        <h3>The genealogical network</h3>
-        <p>Authority carried by descent, endowment, and transmission rather than office: a parallel infrastructure that outlasted most of the dynasties built on Track 1.</p>
-        <ul>
-          <li>Sayyid / Sadat lineage and the naqīb al-ashrāf registries</li>
-          <li>Waqf endowments funding shrines, canals, and madrasas</li>
-          <li>Sufi order silsilas and isnād-based scholarly transmission</li>
-          <li>Shrine (dargāh) networks as regional infrastructure</li>
-        </ul>
-      </div>
-    </div>
-    <div class="not-claim"><strong>What this framework is not claiming:</strong> that any specific ruler, order, or school was secretly of one sect or another absent direct evidence, or that Track 2 constitutes a literal shadow government. It is an analytic distinction for institutional history, applied case by case — not a master key that resolves every question in advance.</div>
-    <div style="margin-top:40px;">
-      <div class="essay">
-        <span class="tag">Tier II</span>
-        <h3><a href="dargah-matrix.html" style="text-decoration:none; color:inherit;">The Dargāh as Multi-Function Institution: A Framework for Reading South Asian Sufi Shrines</a></h3>
-        <span class="meta">verified 2026</span>
-      </div>
-      <div class="essay">
-        <span class="tag">Tier II</span>
-        <h3><a href="iqbal-1930.html" style="text-decoration:none; color:inherit;">Reading the 1930 Allahabad Address: What Iqbal Actually Proposed, and a Track 2 Reading of Why the Indus</a></h3>
-        <span class="meta">verified 2026</span>
-      </div>
-      <div class="essay">
-        <span class="tag">Tier II</span>
-        <h3><a href="cambridge-historiography.html" style="text-decoration:none; color:inherit;">The Primordial Alid Codicological Corpus: An Institutional Reading Alongside the Mainstream Consolidation Narrative</a></h3>
-        <span class="meta">verified 2026</span>
-      </div>
-      <div class="essay">
-        <span class="tag">Tier II</span>
-        <h3><a href="state-islam-two-track.html" style="text-decoration:none; color:inherit;">Two Tracks, One State? Rereading the "Which Islam" Debate on Pakistan's Founding</a></h3>
-        <span class="meta">verified 2026</span>
-      </div>
-    </div>
-  </div>
+<div class="wrap">
+<div class="section-head">
+<h2>The framework</h2>
+<span class="num">01 — reading Islamic institutional history in two tracks</span>
+</div>
+<div class="tracks">
+<div class="track t1">
+<div class="kicker">Track 1</div>
+<h3>The formal state</h3>
+<p>Dynastic and imperial authority: caliphates, sultanates, and their successor states, legitimated by conquest, treaty, and codified law.</p>
+<ul>
+<li>Court-appointed judiciary and state madhhab</li>
+<li>Kharāj / jizya fiscal administration</li>
+<li>Standing armies and provincial governors</li>
+<li>Dynastic succession and imperial chancery</li>
+</ul>
+</div>
+<div class="track t2">
+<div class="kicker">Track 2</div>
+<h3>The genealogical network</h3>
+<p>Authority carried by descent, endowment, and transmission rather than office: a parallel infrastructure that outlasted most of the dynasties built on Track 1.</p>
+<ul>
+<li>Sayyid / Sadat lineage and the naqīb al-ashrāf registries</li>
+<li>Waqf endowments funding shrines, canals, and madrasas</li>
+<li>Sufi order silsilas and isnād-based scholarly transmission</li>
+<li>Shrine (dargāh) networks as regional infrastructure</li>
+</ul>
+</div>
+</div>
+<div class="not-claim"><strong>What this framework is not claiming:</strong> that any specific ruler, order, or school was secretly of one sect or another absent direct evidence, or that Track 2 constitutes a literal shadow government. It is an analytic distinction for institutional history, applied case by case — not a master key that resolves every question in advance.</div>
+<div style="margin-top:40px;">
+<div class="essay">
+<span class="tag">Tier II</span>
+<h3><a href="dargah-matrix.html" style="text-decoration:none; color:inherit;">The Dargāh as Multi-Function Institution: A Framework for Reading South Asian Sufi Shrines</a></h3>
+<span class="meta">verified 2026</span>
+</div>
+<div class="essay">
+<span class="tag">Tier II</span>
+<h3><a href="iqbal-1930.html" style="text-decoration:none; color:inherit;">Reading the 1930 Allahabad Address: What Iqbal Actually Proposed, and a Track 2 Reading of Why the Indus</a></h3>
+<span class="meta">verified 2026</span>
+</div>
+<div class="essay">
+<span class="tag">Tier II</span>
+<h3><a href="cambridge-historiography.html" style="text-decoration:none; color:inherit;">The Primordial Alid Codicological Corpus: An Institutional Reading Alongside the Mainstream Consolidation Narrative</a></h3>
+<span class="meta">verified 2026</span>
+</div>
+<div class="essay">
+<span class="tag">Tier II</span>
+<h3><a href="state-islam-two-track.html" style="text-decoration:none; color:inherit;">Two Tracks, One State? Rereading the "Which Islam" Debate on Pakistan's Founding</a></h3>
+<span class="meta">verified 2026</span>
+</div>
+</div>
+</div>
 </section>
 
 <section id="chain" style="border-bottom:1px solid var(--paper-line);">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>A transmission chain, followed across the line</h2>
-      <span class="num">02 — sanad, n. a chain of authorities behind a transmitted text</span>
-    </div>
-    <div class="chain-card">
-      <svg viewBox="0 0 900 190" width="100%" height="auto" role="img" aria-label="Transmission chain of the Tajrid al-I'tiqad from Tusi through Hilli and Qushji into Sunni and Shia madrasa curricula">
-        <line x1="70" y1="95" x2="830" y2="95" class="rail"></line>
-        <g>
-          <circle cx="100" cy="95" r="8" class="node"></circle>
-          <text x="100" y="60" text-anchor="middle" class="role">1201–1274</text>
-          <text x="100" y="128" text-anchor="middle" class="name">al-Ṭūsī</text>
-          <text x="100" y="145" text-anchor="middle" class="role">Tajrīd al-Iʿtiqād</text>
-        </g>
-        <g>
-          <circle cx="320" cy="95" r="8" class="node"></circle>
-          <text x="320" y="60" text-anchor="middle" class="role">d. 1325</text>
-          <text x="320" y="128" text-anchor="middle" class="name">al-Ḥillī</text>
-          <text x="320" y="145" text-anchor="middle" class="role">Kashf al-Murād</text>
-        </g>
-        <g>
-          <circle cx="540" cy="95" r="8" class="node"></circle>
-          <text x="540" y="60" text-anchor="middle" class="role">d. 1413</text>
-          <text x="540" y="128" text-anchor="middle" class="name">al-Jurjānī</text>
-          <text x="540" y="145" text-anchor="middle" class="role">gloss &amp; commentary</text>
-        </g>
-        <g>
-          <circle cx="760" cy="95" r="8" class="node"></circle>
-          <text x="760" y="60" text-anchor="middle" class="role">15th–20th c.</text>
-          <text x="760" y="128" text-anchor="middle" class="name">Sunni + Shiʿi madrasas</text>
-          <text x="760" y="145" text-anchor="middle" class="role">shared curriculum text</text>
-        </g>
-      </svg>
-      <p class="cap">One real, checkable case: Ṭūsī's kalām primer picked up a Twelver commentator (al-Ḥillī) and a Sunni Ashʿarī one (al-Jurjānī) in the same transmission history, and the resulting text was taught across sectarian lines for centuries. This is the kind of institutional fact the framework is built to notice — not asserted, traced.</p>
-    </div>
-  </div>
+<div class="wrap">
+<div class="section-head">
+<h2>A transmission chain, followed across the line</h2>
+<span class="num">02 — sanad, n. a chain of authorities behind a transmitted text</span>
+</div>
+<div class="chain-card">
+<svg viewBox="0 0 900 190" width="100%" height="auto" role="img" aria-label="Transmission chain of the Tajrid al-I'tiqad from Tusi through Hilli and Qushji into Sunni and Shia madrasa curricula">
+<line x1="70" y1="95" x2="830" y2="95" class="rail"></line>
+<g>
+<circle cx="100" cy="95" r="8" class="node"></circle>
+<text x="100" y="60" text-anchor="middle" class="role">1201–1274</text>
+<text x="100" y="128" text-anchor="middle" class="name">al-Ṭūsī</text>
+<text x="100" y="145" text-anchor="middle" class="role">Tajrīd al-Iʿtiqād</text>
+</g>
+<g>
+<circle cx="320" cy="95" r="8" class="node"></circle>
+<text x="320" y="60" text-anchor="middle" class="role">d. 1325</text>
+<text x="320" y="128" text-anchor="middle" class="name">al-Ḥillī</text>
+<text x="320" y="145" text-anchor="middle" class="role">Kashf al-Murād</text>
+</g>
+<g>
+<circle cx="540" cy="95" r="8" class="node"></circle>
+<text x="540" y="60" text-anchor="middle" class="role">d. 1413</text>
+<text x="540" y="128" text-anchor="middle" class="name">al-Jurjānī</text>
+<text x="540" y="145" text-anchor="middle" class="role">gloss &amp; commentary</text>
+</g>
+<g>
+<circle cx="760" cy="95" r="8" class="node"></circle>
+<text x="760" y="60" text-anchor="middle" class="role">15th–20th c.</text>
+<text x="760" y="128" text-anchor="middle" class="name">Sunni + Shiʿi madrasas</text>
+<text x="760" y="145" text-anchor="middle" class="role">shared curriculum text</text>
+</g>
+</svg>
+<p class="cap">One real, checkable case: Ṭūsī's kalām primer picked up a Twelver commentator (al-Ḥillī) and a Sunni Ashʿarī one (al-Jurjānī) in the same transmission history, and the resulting text was taught across sectarian lines for centuries. This is the kind of institutional fact the framework is built to notice — not asserted, traced.</p>
+</div>
+</div>
 </section>
 
 <section id="corridors">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Regional corridors</h2>
-      <span class="num">03 — where track 2 infrastructure concentrates geographically</span>
-    </div>
-    <div class="corridors">
-      <div class="corridor">
-        <span class="idx">I</span>
-        <h3>Khorasan–Indus Axis</h3>
-        <p>Herat, Qandahar, and Multan as one continuous shrine-and-trade corridor rather than three separate regional histories.</p>
-      </div>
-      <div class="corridor">
-        <span class="idx">II</span>
-        <h3>Iran–Indus Comparative Axis</h3>
-        <p>Reading the qanāt–imāmzādeh system of the Iranian plateau against the dargāh–canal system of the Indus basin.</p>
-      </div>
-      <div class="corridor">
-        <span class="idx">III</span>
-        <h3>Deccan &amp; Gujarat Maritime Corridor</h3>
-        <p>Arabian Sea trade, the Khojki script, and the Satpanth current connecting Gujarat to the Deccan sultanates.</p>
-      </div>
-      <div class="corridor">
-        <span class="idx">IV</span>
-        <h3>Mountain Passes &amp; Frontier Zones</h3>
-        <p>Bolan, Makran, and the western Afghan marches as transit corridors for scholars, not just armies.</p>
-      </div>
-    </div>
-  </div>
+<div class="wrap">
+<div class="section-head">
+<h2>Regional corridors</h2>
+<span class="num">03 — where track 2 infrastructure concentrates geographically</span>
+</div>
+<div class="corridors">
+<div class="corridor">
+<span class="idx">I</span>
+<h3>Khorasan–Indus Axis</h3>
+<p>Herat, Qandahar, and Multan as one continuous shrine-and-trade corridor rather than three separate regional histories.</p>
+</div>
+<div class="corridor">
+<span class="idx">II</span>
+<h3>Iran–Indus Comparative Axis</h3>
+<p>Reading the qanāt–imāmzādeh system of the Iranian plateau against the dargāh–canal system of the Indus basin.</p>
+</div>
+<div class="corridor">
+<span class="idx">III</span>
+<h3>Deccan &amp; Gujarat Maritime Corridor</h3>
+<p>Arabian Sea trade, the Khojki script, and the Satpanth current connecting Gujarat to the Deccan sultanates.</p>
+</div>
+<div class="corridor">
+<span class="idx">IV</span>
+<h3>Mountain Passes &amp; Frontier Zones</h3>
+<p>Bolan, Makran, and the western Afghan marches as transit corridors for scholars, not just armies.</p>
+</div>
+</div>
+</div>
 </section>
 
 <section id="essays">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Essays &amp; working papers</h2>
-      <span class="num">04 — exploratory, argued openly as argument</span>
-    </div>
-    <div>
-      <div class="essay">
-        <span class="tag" style="color:var(--brass); border-color:var(--brass);">Tier III</span>
-        <h3><a href="jinnah-shia.html" style="text-decoration:none; color:inherit;">Jinnah's Religious Identity: The Evidence and the Unsettled Record</a></h3>
-        <span class="meta">verified 2026</span>
-      </div>
-      <div class="essay">
-        <span class="tag" style="color:var(--brass); border-color:var(--brass);">Tier III</span>
-        <h3><a href="jogi-malang.html" style="text-decoration:none; color:inherit;">Ash, Ear-Rings, and the Dhamāl: Nāth Yogis and Sufi Ascetics in the Indus Region</a></h3>
-        <span class="meta">verified 2026</span>
-      </div>
-      <div class="essay">
-        <span class="tag" style="color:var(--brass); border-color:var(--brass);">Tier III</span>
-        <h3><a href="iran-indus-corridor.html" style="text-decoration:none; color:inherit;">Between Two Rivers of Devotion: What Actually Connects the Iranian Plateau to the Indus Basin</a></h3>
-        <span class="meta">verified 2026</span>
-      </div>
-      <div class="essay">
-        <span class="tag" style="color:var(--brass); border-color:var(--brass);">Tier III</span>
-        <h3><a href="bar-settlement.html" style="text-decoration:none; color:inherit;">Who Actually Settled the Bār? Kings, Canals, and a Six-Century Chronology Problem</a></h3>
-        <span class="meta">verified 2026</span>
-      </div>
-      <div class="essay">
-        <span class="tag" style="color:var(--brass); border-color:var(--brass);">Tier III</span>
-        <h3><a href="golden-chain-reconsidered.html" style="text-decoration:none; color:inherit;">The Golden Chain Reconsidered: Silsila, Walāya, and the Corbin Distinction</a></h3>
-        <span class="meta">verified 2026</span>
-      </div>
-      <div class="essay">
-        <span class="tag" style="color:var(--brass); border-color:var(--brass);">Tier III</span>
-        <h3><a href="sadat-yassa-alliance.html" style="text-decoration:none; color:inherit;">Nowruz, Not a Named Sayyid: Ghazan Khan's Conversion and the "Sadat-Yassa Alliance"</a></h3>
-        <span class="meta">verified 2026</span>
-      </div>
-      <div class="essay">
-        <span class="tag" style="color:var(--brass); border-color:var(--brass);">Tier III</span>
-        <h3><a href="alid-iran-seven-centuries.html" style="text-decoration:none; color:inherit;">Seven Centuries of "Alid Iran"? Real Dynasties, Overstated Continuity</a></h3>
-        <span class="meta">verified 2026</span>
-      </div>
-      <div class="essay">
-        <span class="tag" style="color:var(--brass); border-color:var(--brass);">Tier III</span>
-        <h3><a href="iqbal-bengal-ecology.html" style="text-decoration:none; color:inherit;">Iqbal's Bengal "Exclusion": An Ecological Rationale Not in the Text</a></h3>
-        <span class="meta">verified 2026</span>
-      </div>
-      <div class="essay">
-        <span class="tag" style="color:var(--brass); border-color:var(--brass);">Tier III</span>
-        <h3><a href="jinnah-sindh-ruling.html" style="text-decoration:none; color:inherit;">The Court Records Say Otherwise: Jinnah and a Reversed Sindh High Court Ruling</a></h3>
-        <span class="meta">verified 2026</span>
-      </div>
+<div class="wrap">
+<div class="section-head">
+<h2>Essays &amp; working papers</h2>
+<span class="num">04 — exploratory, argued openly as argument</span>
+</div>
+<div>
+<div class="essay">
+<span class="tag" style="color:var(--brass); border-color:var(--brass);">Tier III</span>
+<h3><a href="jinnah-shia.html" style="text-decoration:none; color:inherit;">Jinnah's Religious Identity: The Evidence and the Unsettled Record</a></h3>
+<span class="meta">verified 2026</span>
+</div>
+<div class="essay">
+<span class="tag" style="color:var(--brass); border-color:var(--brass);">Tier III</span>
+<h3><a href="jogi-malang.html" style="text-decoration:none; color:inherit;">Ash, Ear-Rings, and the Dhamāl: Nāth Yogis and Sufi Ascetics in the Indus Region</a></h3>
+<span class="meta">verified 2026</span>
+</div>
+<div class="essay">
+<span class="tag" style="color:var(--brass); border-color:var(--brass);">Tier III</span>
+<h3><a href="iran-indus-corridor.html" style="text-decoration:none; color:inherit;">Between Two Rivers of Devotion: What Actually Connects the Iranian Plateau to the Indus Basin</a></h3>
+<span class="meta">verified 2026</span>
+</div>
+<div class="essay">
+<span class="tag" style="color:var(--brass); border-color:var(--brass);">Tier III</span>
+<h3><a href="bar-settlement.html" style="text-decoration:none; color:inherit;">Who Actually Settled the Bār? Kings, Canals, and a Six-Century Chronology Problem</a></h3>
+<span class="meta">verified 2026</span>
+</div>
+<div class="essay">
+<span class="tag" style="color:var(--brass); border-color:var(--brass);">Tier III</span>
+<h3><a href="golden-chain-reconsidered.html" style="text-decoration:none; color:inherit;">The Golden Chain Reconsidered: Silsila, Walāya, and the Corbin Distinction</a></h3>
+<span class="meta">verified 2026</span>
+</div>
+<div class="essay">
+<span class="tag" style="color:var(--brass); border-color:var(--brass);">Tier III</span>
+<h3><a href="sadat-yassa-alliance.html" style="text-decoration:none; color:inherit;">Nowruz, Not a Named Sayyid: Ghazan Khan's Conversion and the "Sadat-Yassa Alliance"</a></h3>
+<span class="meta">verified 2026</span>
+</div>
+<div class="essay">
+<span class="tag" style="color:var(--brass); border-color:var(--brass);">Tier III</span>
+<h3><a href="alid-iran-seven-centuries.html" style="text-decoration:none; color:inherit;">Seven Centuries of "Alid Iran"? Real Dynasties, Overstated Continuity</a></h3>
+<span class="meta">verified 2026</span>
+</div>
+<div class="essay">
+<span class="tag" style="color:var(--brass); border-color:var(--brass);">Tier III</span>
+<h3><a href="iqbal-bengal-ecology.html" style="text-decoration:none; color:inherit;">Iqbal's Bengal "Exclusion": An Ecological Rationale Not in the Text</a></h3>
+<span class="meta">verified 2026</span>
+</div>
+<div class="essay">
+<span class="tag" style="color:var(--brass); border-color:var(--brass);">Tier III</span>
+<h3><a href="jinnah-sindh-ruling.html" style="text-decoration:none; color:inherit;">The Court Records Say Otherwise: Jinnah and a Reversed Sindh High Court Ruling</a></h3>
+<span class="meta">verified 2026</span>
+</div>
 
-      <div class="essay">
-        <span class="tag">Working paper</span>
-        <h3>Merchant Networks and the Satpanth Current in Gujarat</h3>
-        <span class="meta">queued for verification</span>
-      </div>
-      <div class="essay">
-        <span class="tag">Working paper</span>
-        <h3>The Naqīb al-Ashrāf Office and the Administration of Sayyid Status</h3>
-        <span class="meta">queued for verification</span>
-      </div>
-    </div>
-  </div>
+<div class="essay">
+<span class="tag">Working paper</span>
+<h3>Merchant Networks and the Satpanth Current in Gujarat</h3>
+<span class="meta">queued for verification</span>
+</div>
+<div class="essay">
+<span class="tag">Working paper</span>
+<h3>The Naqīb al-Ashrāf Office and the Administration of Sayyid Status</h3>
+<span class="meta">queued for verification</span>
+</div>
+</div>
+</div>
+</section>
+
+<section id="formal">
+<div class="wrap">
+<div class="section-head">
+<h2>Formal — computational theology</h2>
+<span class="num">04a — machine-checked arguments, verification status disclosed</span>
+</div>
+<p style="max-width:62ch; color:var(--ink-soft); font-size:15.5px; margin-bottom:8px;">A separate tier from the essays above: arguments restated as explicit premises and checked with a proof assistant (Lean 4), rather than argued in prose. Formal validity is not the same claim as truth — each page here states plainly which premises are contested and what its actual verification status is, rather than letting "formalized" imply more certainty than a build log can back up.</p>
+<div>
+<div class="essay">
+<span class="tag" style="color:var(--formal); border-color:var(--formal);">Formal</span>
+<h3><a href="kalam.html" style="text-decoration:none; color:inherit;">The Kalām Engine: A Machine-Checked Necessary-Existent Argument</a></h3>
+<span class="meta">v1 · CI pending</span>
+</div>
+</div>
+</div>
 </section>
 
 <section id="publications">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Publications</h2>
-      <span class="num">05 — verified, citation-checked, external record</span>
-    </div>
-    <div>
-      <div class="pub">
-        <div>
-          <h3><a href="tajrid.html" style="text-decoration:none; color:inherit;">A Shared Curriculum Across the Sectarian Line: Naṣīr al-Dīn al-Ṭūsī's <em>Tajrīd al-ʿAqāʾid</em> in Shia and Sunni Madrasas</a></h3>
-          <div class="venue">SSRN — in preparation</div>
-        </div>
-        <span class="status">Verification pass complete</span>
-      </div>
-      <div class="pub">
-        <div>
-          <h3><a href="waqf-act.html" style="text-decoration:none; color:inherit;">The Mussalman Wakf Validating Act of 1913: Colonial Property Law and the Restoration of the Family Waqf in British India</a></h3>
-          <div class="venue">SSRN — in preparation</div>
-        </div>
-        <span class="status">Verification pass complete</span>
-      </div>
-      <div class="pub">
-        <div>
-          <h3><a href="khojki.html" style="text-decoration:none; color:inherit;">The Khojkī Script and the Khoja Communities of Western India</a></h3>
-          <div class="venue">SSRN — in preparation</div>
-        </div>
-        <span class="status">Verification pass complete</span>
-      </div>
-    </div>
-    <div class="profiles">
-      <a class="profile-link" href="#"><span class="dot"></span> ORCID record</a>
-      <a class="profile-link" href="#"><span class="dot"></span> SSRN author page</a>
-      <a class="profile-link" href="#"><span class="dot"></span> Academia.edu profile</a>
-    </div>
-  </div>
+<div class="wrap">
+<div class="section-head">
+<h2>Publications</h2>
+<span class="num">05 — verified, citation-checked, external record</span>
+</div>
+<div>
+<div class="pub">
+<div>
+<h3><a href="tajrid.html" style="text-decoration:none; color:inherit;">A Shared Curriculum Across the Sectarian Line: Naṣīr al-Dīn al-Ṭūsī's <em>Tajrīd al-ʿAqāʾid</em> in Shia and Sunni Madrasas</a></h3>
+<div class="venue">SSRN — in preparation</div>
+</div>
+<span class="status">Verification pass complete</span>
+</div>
+<div class="pub">
+<div>
+<h3><a href="waqf-act.html" style="text-decoration:none; color:inherit;">The Mussalman Wakf Validating Act of 1913: Colonial Property Law and the Restoration of the Family Waqf in British India</a></h3>
+<div class="venue">SSRN — in preparation</div>
+</div>
+<span class="status">Verification pass complete</span>
+</div>
+<div class="pub">
+<div>
+<h3><a href="khojki.html" style="text-decoration:none; color:inherit;">The Khojkī Script and the Khoja Communities of Western India</a></h3>
+<div class="venue">SSRN — in preparation</div>
+</div>
+<span class="status">Verification pass complete</span>
+</div>
+</div>
+<div class="profiles">
+<a class="profile-link" href="#"><span class="dot"></span> ORCID record</a>
+<a class="profile-link" href="#"><span class="dot"></span> SSRN author page</a>
+<a class="profile-link" href="#"><span class="dot"></span> Academia.edu profile</a>
+</div>
+</div>
 </section>
 
 <section id="glossary">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Codicology &amp; terms</h2>
-      <span class="num">06 — defined precisely, not rhetorically</span>
-    </div>
-    <div class="glossary">
-      <div class="term"><div class="w">Sanad</div><p>The chain of named authorities behind a transmitted text or report — the basic unit of verification in the manuscript tradition this scriptorium studies, and the source of this hub's working method.</p></div>
-      <div class="term"><div class="w">Walāya</div><p>Authority or guardianship transmitted through recognized descent or spiritual filiation, distinct from office-based authority.</p></div>
-      <div class="term"><div class="w">Sadat</div><p>Recognized descendants of the Prophet through Fāṭima and ʿAlī — a real, historically documented genealogical and social category.</p></div>
-      <div class="term"><div class="w">Naqīb al-Ashrāf</div><p>The historical office responsible for registering and governing sayyid lineages under Ottoman, Safavid, and Mughal administration.</p></div>
-    </div>
-    <div style="margin-top:40px;">
-      <div class="essay">
-        <span class="tag">Tier IV</span>
-        <h3><a href="modarressi.html" style="text-decoration:none; color:inherit;">Hossein Modarressi and the Codicology of Early Shi'ite Literature</a></h3>
-        <span class="meta">verified 2026</span>
-      </div>
-      <div class="essay">
-        <span class="tag">Tier IV</span>
-        <h3><a href="mulla-sadra.html" style="text-decoration:none; color:inherit;">The School of Isfahan and Mullā Ṣadrā's Transcendent Theosophy</a></h3>
-        <span class="meta">verified 2026</span>
-      </div>
-      <div class="essay">
-        <span class="tag">Tier IV</span>
-        <h3><a href="abu-mikhnaf.html" style="text-decoration:none; color:inherit;">Abū Mikhnaf and the Textual Origins of the Karbala Narrative</a></h3>
-        <span class="meta">verified 2026</span>
-      </div>
-      <div class="essay">
-        <span class="tag">Tier IV</span>
-        <h3><a href="waqf-act-1936.html" style="text-decoration:none; color:inherit;">The United Provinces Muslim Waqfs Act of 1936</a></h3>
-        <span class="meta">verified 2026</span>
-      </div>
-    </div>
-  </div>
+<div class="wrap">
+<div class="section-head">
+<h2>Codicology &amp; terms</h2>
+<span class="num">06 — defined precisely, not rhetorically</span>
+</div>
+<div class="glossary">
+<div class="term"><div class="w">Sanad</div><p>The chain of named authorities behind a transmitted text or report — the basic unit of verification in the manuscript tradition this scriptorium studies, and the source of this hub's working method.</p></div>
+<div class="term"><div class="w">Walāya</div><p>Authority or guardianship transmitted through recognized descent or spiritual filiation, distinct from office-based authority.</p></div>
+<div class="term"><div class="w">Sadat</div><p>Recognized descendants of the Prophet through Fāṭima and ʿAlī — a real, historically documented genealogical and social category.</p></div>
+<div class="term"><div class="w">Naqīb al-Ashrāf</div><p>The historical office responsible for registering and governing sayyid lineages under Ottoman, Safavid, and Mughal administration.</p></div>
+</div>
+<div style="margin-top:40px;">
+<div class="essay">
+<span class="tag">Tier IV</span>
+<h3><a href="modarressi.html" style="text-decoration:none; color:inherit;">Hossein Modarressi and the Codicology of Early Shi'ite Literature</a></h3>
+<span class="meta">verified 2026</span>
+</div>
+<div class="essay">
+<span class="tag">Tier IV</span>
+<h3><a href="mulla-sadra.html" style="text-decoration:none; color:inherit;">The School of Isfahan and Mullā Ṣadrā's Transcendent Theosophy</a></h3>
+<span class="meta">verified 2026</span>
+</div>
+<div class="essay">
+<span class="tag">Tier IV</span>
+<h3><a href="abu-mikhnaf.html" style="text-decoration:none; color:inherit;">Abū Mikhnaf and the Textual Origins of the Karbala Narrative</a></h3>
+<span class="meta">verified 2026</span>
+</div>
+<div class="essay">
+<span class="tag">Tier IV</span>
+<h3><a href="waqf-act-1936.html" style="text-decoration:none; color:inherit;">The United Provinces Muslim Waqfs Act of 1936</a></h3>
+<span class="meta">verified 2026</span>
+</div>
+</div>
+</div>
 </section>
 
 <section id="methodology" style="border-bottom:none;">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>How this site is organized</h2>
-      <span class="num">07 — four tiers, one evidentiary bar per tier</span>
-    </div>
-    <p style="max-width:62ch; color:var(--ink-soft); font-size:15.5px;">Every page on this hub carries a visible tier. The tier tells you what standard of evidence to expect — a working essay and a verified publication are never presented the same way here.</p>
-    <div class="tiers">
-      <div class="tier"><div class="rn">I</div><h4>Publications</h4><p>Citation-checked, externally indexed via SSRN &amp; ORCID.</p></div>
-      <div class="tier"><div class="rn">II</div><h4>Framework</h4><p>Original interpretation, argued and labeled as such.</p></div>
-      <div class="tier"><div class="rn">III</div><h4>Essays</h4><p>Exploratory, anchored in a real source, open to revision.</p></div>
-      <div class="tier"><div class="rn">IV</div><h4>Atlas</h4><p>Reference: timelines, glossary, and the bibliography.</p></div>
-    </div>
-  </div>
+<div class="wrap">
+<div class="section-head">
+<h2>How this site is organized</h2>
+<span class="num">07 — four tiers, one evidentiary bar per tier</span>
+</div>
+<p style="max-width:62ch; color:var(--ink-soft); font-size:15.5px;">Every page on this hub carries a visible tier. The tier tells you what standard of evidence to expect — a working essay and a verified publication are never presented the same way here.</p>
+<div class="tiers">
+<div class="tier"><div class="rn">I</div><h4>Publications</h4><p>Citation-checked, externally indexed via SSRN &amp; ORCID.</p></div>
+<div class="tier"><div class="rn">II</div><h4>Framework</h4><p>Original interpretation, argued and labeled as such.</p></div>
+<div class="tier"><div class="rn">III</div><h4>Essays</h4><p>Exploratory, anchored in a real source, open to revision.</p></div>
+<div class="tier"><div class="rn">IV</div><h4>Atlas</h4><p>Reference: timelines, glossary, and the bibliography.</p></div>
+</div>
+<p style="max-width:62ch; color:var(--ink-soft); font-size:14px; margin-top:18px;">The Formal tier (see above) sits outside this four-tier scale — it isn't a claim about historical evidence at all, but about logical validity given stated premises, with its own verification status (a CI build log, not an editorial pass) disclosed on each page.</p>
+</div>
 </section>
 
 <footer>
-  <div class="wrap cols">
-    <div>
-      <div class="mark">Alvid Scriptorium</div>
-      <p>An independent research hub on Alid codicology and the institutional history of Islamic civilization.</p>
-    </div>
-    <div class="profiles" style="margin-top:0;">
-      <a class="profile-link" href="#">ORCID</a>
-      <a class="profile-link" href="#">SSRN</a>
-      <a class="profile-link" href="#">Academia.edu</a>
-    </div>
-  </div>
-  <div class="wrap fine">Three publications, four framework essays, nine Tier III essays, and four codicology entries have completed the verification pass described under Methodology; the remaining entries are queued and shown as working papers pending the same process.</div>
+<div class="wrap cols">
+<div>
+<div class="mark">Alvid Scriptorium</div>
+<p>An independent research hub on Alid codicology and the institutional history of Islamic civilization.</p>
+</div>
+<div class="profiles" style="margin-top:0;">
+<a class="profile-link" href="#">ORCID</a>
+<a class="profile-link" href="#">SSRN</a>
+<a class="profile-link" href="#">Academia.edu</a>
+</div>
+</div>
+<div class="wrap fine">Three publications, four framework essays, nine Tier III essays, and four codicology entries have completed the verification pass described under Methodology; the remaining entries are queued and shown as working papers pending the same process. One Formal computational-theology page (the Kalām Engine) is also live, with its own build-log verification status rather than an editorial one — see that page for details.</div>
 </footer>
