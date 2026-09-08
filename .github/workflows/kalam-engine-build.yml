@@ -1,0 +1,36 @@
+name: Kalam Engine — build and verify
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'kalam-engine/**'
+      - '.github/workflows/kalam-engine-build.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'kalam-engine/**'
+  workflow_dispatch: {}
+
+jobs:
+  lake-build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: kalam-engine
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install elan (Lean toolchain manager)
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Build (reads kalam-engine/lean-toolchain and fetches the pinned Lean version)
+        run: lake build
+
+      - name: Note on where to look
+        run: |
+          echo "The 'lake build' step above elaborates KalamEngine.lean, which ends in"
+          echo "'#print axioms necessary_root_exists' — its output is in the Build step's"
+          echo "log above this one. There should be no 'sorry' anywhere in that output."
