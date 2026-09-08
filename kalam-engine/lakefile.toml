@@ -1,0 +1,5 @@
+name = "kalam_engine"
+defaultTargets = ["KalamEngine"]
+
+[[lean_lib]]
+name = "KalamEngine"
